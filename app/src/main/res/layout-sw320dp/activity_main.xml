@@ -45,11 +45,11 @@
             android:id="@+id/get"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="140dp"
             android:background="@drawable/roundedrect"
             android:orientation="horizontal"
-            android:padding="16dp"
+            android:padding="10dp"
 
             >
 

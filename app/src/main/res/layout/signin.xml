@@ -112,18 +112,6 @@
         android:background="#ADCCE2"/>
 
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="160dp"
-        android:paddingRight="10dp"
-        android:textColor="#ADCCE2"
-        android:layout_marginBottom="-6dp"
-        android:textSize="16dp"
-        android:layout_marginTop="3dp"
-        android:text="Forgot Password?" />
-
     <com.example.zohai.customfonts.MyTextView
             android:id="@+id/signin"
             android:layout_width="match_parent"
