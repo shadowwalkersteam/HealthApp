@@ -5,9 +5,6 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-/**
- * Created by one on 3/12/15.
- */
 public class MyTextView extends android.support.v7.widget.AppCompatTextView {
 
     public MyTextView(Context context, AttributeSet attrs, int defStyle) {

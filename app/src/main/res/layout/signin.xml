@@ -31,7 +31,7 @@
                 />
 
 
-            <customfonts.MyTextView
+            <com.example.zohai.customfonts.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SIGN IN"
@@ -56,12 +56,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_alignParentBottom="true">
+    android:layout_alignParentBottom="true"
+    android:weightSum="1">
 
 
 
 
-    <customfonts.MyEditText
+    <com.example.zohai.customfonts.MyEditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,7 +75,8 @@
         android:inputType="text"
         android:background="#0000"
         android:padding="16dp"
-        android:drawableRight="@drawable/user"
+        android:drawableLeft="@drawable/ic_shape_1"
+        android:drawablePadding="16dp"
         android:layout_marginRight="35dp"/>
 
 
@@ -85,7 +87,7 @@
         android:layout_height="1dp"
         android:background="#ADCCE2" />
 
-    <customfonts.MyEditText
+    <com.example.zohai.customfonts.MyEditText
         android:id="@+id/password"
         android:textSize="16dp"
         android:layout_width="match_parent"
@@ -98,7 +100,8 @@
         android:maxLength="12"
         android:background="#0000"
         android:padding="16dp"
-        android:drawableRight="@drawable/pasword"
+        android:drawableLeft="@drawable/ic_tool_6"
+        android:drawablePadding="16dp"
         android:layout_marginRight="35dp"/>
     <View
         android:layout_width="match_parent"
@@ -109,13 +112,23 @@
         android:background="#ADCCE2"/>
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="160dp"
+        android:paddingRight="10dp"
+        android:textColor="#ADCCE2"
+        android:layout_marginBottom="-6dp"
+        android:textSize="16dp"
+        android:layout_marginTop="3dp"
+        android:text="Forgot Password?" />
 
-
-    <customfonts.MyTextView
+    <com.example.zohai.customfonts.MyTextView
             android:id="@+id/signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        android:background="@drawable/rect"
+        android:background="@drawable/rect1"
             android:text="SIGN IN"
             android:textSize="16dp"
             android:textColor="#fff"
@@ -129,14 +142,8 @@
 
 
         />
-
-
-
-
-
-
 </LinearLayout>
 
-
 </RelativeLayout>
+
 </FrameLayout>

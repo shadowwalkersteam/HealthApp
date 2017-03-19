@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/bgtrans">
 
-        <customfonts.MyTextView
+        <com.example.zohai.customfonts.MyTextView
         android:id="@+id/signin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,7 +35,7 @@
 
 
 
-        <customfonts.MyTextView
+        <com.example.zohai.customfonts.MyTextView
             android:id="@+id/acc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -76,7 +76,7 @@
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/bag"
+                    android:src="@drawable/logo2"
                     android:paddingLeft="3dp"
                     android:layout_gravity="center"
                      />
@@ -84,7 +84,7 @@
 
             </FrameLayout>
 
-            <customfonts.MyTextView
+            <com.example.zohai.customfonts.MyTextView
                 android:id="@+id/start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

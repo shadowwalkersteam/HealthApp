@@ -31,7 +31,7 @@
                 />
 
 
-            <customfonts.MyTextView
+            <com.example.zohai.customfonts.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SIGN IN"
@@ -61,7 +61,7 @@
 
 
 
-    <customfonts.MyEditText
+    <com.example.zohai.customfonts.MyEditText
         android:textSize="16dp"
         android:id="@+id/username"
         android:layout_width="match_parent"
@@ -74,7 +74,8 @@
         android:inputType="text"
         android:background="#0000"
         android:padding="16dp"
-        android:drawableRight="@drawable/user"
+        android:drawableLeft="@drawable/ic_shape_1"
+        android:drawablePadding="16dp"
         android:layout_marginRight="35dp"/>
 
 
@@ -85,7 +86,7 @@
         android:layout_height="1dp"
         android:background="#ADCCE2" />
 
-    <customfonts.MyEditText
+    <com.example.zohai.customfonts.MyEditText
         android:textSize="16dp"
         android:id="@+id/password"
         android:layout_width="match_parent"
@@ -98,7 +99,8 @@
         android:textColor="#ADCCE2"
         android:background="#0000"
         android:padding="16dp"
-        android:drawableRight="@drawable/pasword"
+        android:drawableLeft="@drawable/ic_tool_6"
+        android:drawablePadding="16dp"
         android:layout_marginRight="35dp"/>
     <View
         android:layout_width="match_parent"
@@ -108,15 +110,25 @@
         android:layout_marginBottom="10dp"
         android:background="#ADCCE2"/>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="260dp"
+        android:paddingRight="40dp"
+        android:textSize="17dp"
+        android:textColor="#ADCCE2"
+        android:layout_marginBottom="-6dp"
+        android:layout_marginTop="3dp"
+        android:text="Forgot Password?" />
 
 
-
-    <customfonts.MyTextView
+    <com.example.zohai.customfonts.MyTextView
 
             android:id="@+id/signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-        android:background="@drawable/rect"
+            android:background="@drawable/rect1"
             android:text="SIGN IN"
             android:textSize="16dp"
             android:textColor="#fff"
