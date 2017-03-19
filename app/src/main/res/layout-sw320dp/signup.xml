@@ -132,7 +132,7 @@
                 <!--android:layout_height="1dp"-->
                 <!--android:background="#ADCCE2" />-->
 
-            <com.example.zohai.customfonts.MyTextView
+            <com.example.zohai.customfonts.MyEditText
                 android:textSize="16dp"
                 android:id="@+id/password"
                 android:layout_width="match_parent"

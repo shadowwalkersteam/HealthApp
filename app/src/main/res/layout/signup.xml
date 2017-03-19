@@ -87,7 +87,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
-
                 android:textColorHint="#ADCCE2"
                 android:textColor="#ADCCE2"
                 android:layout_marginLeft="22dp"
@@ -103,34 +102,6 @@
                 android:layout_marginRight="40dp"
                 android:layout_height="1dp"
                 android:background="#ADCCE2" />
-
-
-
-
-
-            <!--<customfonts.MyEditText-->
-                <!--android:textSize="16dp"-->
-                <!--android:id="@+id/username"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Username"-->
-
-                <!--android:textColorHint="#ADCCE2"-->
-                <!--android:textColor="#ADCCE2"-->
-                <!--android:layout_marginLeft="22dp"-->
-                <!--android:inputType="text"-->
-                <!--android:background="#0000"-->
-                <!--android:padding="16dp"-->
-
-                <!--android:layout_marginRight="35dp"/>-->
-
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_marginLeft="40dp"-->
-                <!--android:layout_marginRight="40dp"-->
-                <!--android:layout_height="1dp"-->
-                <!--android:background="#ADCCE2" />-->
 
             <com.example.zohai.customfonts.MyEditText
                 android:textSize="16dp"
@@ -158,6 +129,7 @@
 
 
 
+
             <com.example.zohai.customfonts.MyTextView
                 android:id="@+id/signin"
                 android:layout_width="match_parent"
@@ -175,13 +147,6 @@
                 android:layout_marginTop="32dp"
                 />
 
-
-
-
-
-
         </LinearLayout>
-
-
     </RelativeLayout>
 </FrameLayout>
