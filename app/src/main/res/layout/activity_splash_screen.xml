@@ -7,13 +7,13 @@
     tools:context="com.example.zohai.healthapp.SplashScreen"
     tools:layout_editor_absoluteY="0dp"
     tools:layout_editor_absoluteX="0dp"
-    android:background="@color/splashcolor"
+    android:background="@drawable/splashback"
     >
 
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:src="@drawable/logo1"
         android:id="@+id/imageView"
         android:scaleType="centerInside"
@@ -21,12 +21,13 @@
 
         />
 
-    <TextView
+    <com.example.zohai.customfonts.MyTextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:text="Health comes first"
+        android:textColor='#ffff'
+        android:textSize="20dp"
+        android:text="Health first"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
