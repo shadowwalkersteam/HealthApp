@@ -1,11 +1,12 @@
 package com.example.zohai.healthapp;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends Activity {
 
     private static int SPLASH_TIME_OUT = 5000;
 
