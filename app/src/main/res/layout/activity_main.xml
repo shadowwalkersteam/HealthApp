@@ -3,59 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgimage">
-
-
+    android:background="#282f3c">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bgtrans">
+        >
 
         <com.example.zohai.customfonts.MyTextView
-        android:id="@+id/signin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="SIGN IN"
-        android:textSize="25dp"
-        android:textColor="#54abee"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="45dp"
-        />
+            android:id="@+id/signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="45dp"
+            android:gravity="center"
+            android:text="SIGN IN"
+            android:textColor="#54abee"
+            android:textSize="25dp" />
 
         <TextView
-            android:background="@drawable/ozzonlogo"
             android:id="@+id/ozzon"
             android:layout_width="132dp"
             android:layout_height="30dp"
             android:layout_centerInParent="true"
-            />
-
+            android:background="@drawable/ozzonlogo" />
 
 
         <com.example.zohai.customfonts.MyTextView
             android:id="@+id/acc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Already have an account?"
-            android:textSize="16dp"
-            android:textColor="#c4c5c9"
-            android:gravity="center"
             android:layout_above="@id/signin"
+            android:gravity="center"
             android:paddingBottom="16dp"
-            />
+            android:text="Already have an account?"
+            android:textColor="#c4c5c9"
+            android:textSize="16dp" />
 
         <LinearLayout
             android:id="@+id/get"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="130dp"
-            android:background="@drawable/roundedrect"
-            android:padding="13dp"
-            android:orientation="horizontal"
             android:layout_marginTop="140dp"
+            android:background="@drawable/roundedrect"
+            android:orientation="horizontal"
+            android:padding="10dp"
 
             >
 
@@ -69,17 +63,15 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/rect1"
-                    />
+                    android:src="@drawable/rect1" />
 
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/logo2"
-                    android:paddingLeft="3dp"
                     android:layout_gravity="center"
-                     />
+                    android:paddingLeft="3dp"
+                    android:src="@drawable/logo2" />
 
 
             </FrameLayout>
@@ -88,19 +80,16 @@
                 android:id="@+id/start"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Get Started"
-                android:textSize="22dp"
-                android:textColor="#fff"
                 android:layout_gravity="center"
-                android:layout_marginLeft="16dp"/>
+                android:layout_marginLeft="16dp"
+                android:text="Get Started"
+                android:textColor="#fff"
+                android:textSize="22dp" />
 
         </LinearLayout>
 
 
-
-
-     </RelativeLayout>
-
+    </RelativeLayout>
 
 
 </FrameLayout>

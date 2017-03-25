@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgimage">
+    android:background="#282f3c">
 
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/transparentimage">
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="37dp"
-            android:layout_marginLeft="30dp"
-            android:id="@+id/linearLayout">
+            android:layout_marginLeft="30dp">
 
             <ImageView
 
@@ -49,9 +48,9 @@
             android:layout_width="90dp"
             android:layout_height="120dp"
             android:background="@drawable/logo"
-            android:layout_marginTop="22dp"
-            android:layout_below="@+id/linearLayout"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,34 +103,6 @@
                 android:layout_height="1dp"
                 android:background="#ADCCE2" />
 
-
-
-
-
-            <!--<customfonts.MyEditText-->
-                <!--android:textSize="16dp"-->
-                <!--android:id="@+id/username"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:hint="Username"-->
-
-                <!--android:textColorHint="#ADCCE2"-->
-                <!--android:textColor="#ADCCE2"-->
-                <!--android:layout_marginLeft="22dp"-->
-                <!--android:inputType="text"-->
-                <!--android:background="#0000"-->
-                <!--android:padding="16dp"-->
-
-                <!--android:layout_marginRight="35dp"/>-->
-
-
-            <!--<View-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_marginLeft="40dp"-->
-                <!--android:layout_marginRight="40dp"-->
-                <!--android:layout_height="1dp"-->
-                <!--android:background="#ADCCE2" />-->
-
             <com.example.zohai.customfonts.MyEditText
                 android:textSize="16dp"
                 android:id="@+id/password"
@@ -140,8 +111,8 @@
                 android:hint="Password"
                 android:textColorHint="#ADCCE2"
                 android:layout_marginLeft="22dp"
-                android:maxLength="12"
                 android:inputType="textPassword"
+                android:maxLength="12"
                 android:textColor="#ADCCE2"
                 android:background="#0000"
                 android:padding="16dp"
@@ -154,6 +125,7 @@
                 android:layout_height="1dp"
                 android:layout_marginBottom="10dp"
                 android:background="#ADCCE2"/>
+
 
 
 
@@ -173,17 +145,8 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="28dp"
                 android:layout_marginTop="32dp"
-
-
                 />
 
-
-
-
-
-
         </LinearLayout>
-
-
     </RelativeLayout>
 </FrameLayout>
