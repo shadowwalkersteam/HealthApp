@@ -1,79 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.zohai.healthapp.DoctorPatient"
-    android:background="@drawable/bgimage">
+    android:background="#282f3c">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgtrans">
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
-            android:orientation="vertical"
-            android:weightSum="1"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true">
+
 
             <com.example.zohai.customfonts.MyTextView
                 android:id="@+id/doc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/or"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="35dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="50dp"
-                android:layout_weight="0.24"
                 android:background="@drawable/rect1"
                 android:fontFamily="sans-serif-smallcaps"
                 android:gravity="center"
                 android:padding="16dp"
                 android:text="Doctor"
                 android:textColor="#fff"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textSize="20dp"
+                android:layout_marginBottom="12dp"
+                android:layout_above="@+id/or" />
 
-            <com.example.zohai.customfonts.MyTextView
-                android:id="@+id/patien"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="55dp"
-                android:layout_marginLeft="50dp"
-                android:layout_marginRight="50dp"
-                android:background="@drawable/rect1"
-                android:fontFamily="sans-serif-smallcaps"
-                android:gravity="center"
-                android:padding="16dp"
-                android:text="Patient"
-                android:textColor="#fff"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="OR"
+        android:textColor="#ADCCE2"
+        android:textSize="20dp"
+        android:layout_above="@+id/patien"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
-            <TextView
-                android:id="@+id/or"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/patien"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="18dp"
-                android:fontFamily="casual"
-                android:text="OR"
-                android:textColor="#ADCCE2"
-                android:textSize="20dp" />
-        </LinearLayout>
+    <com.example.zohai.customfonts.MyTextView
+        android:id="@+id/patien"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
 
-
-    </RelativeLayout>
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rect1"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Patient"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_marginBottom="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 
-</FrameLayout>
+</RelativeLayout>

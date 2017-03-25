@@ -12,7 +12,7 @@
         <activity
             android:name=".SplashScreen"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,9 @@
         <activity android:name=".ActivitySignin" />
         <activity android:name=".ActivitySignup" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DoctorPatient"></activity>
+        <activity android:name=".DoctorPatient">
+
+        </activity>
     </application>
 
 </manifest>
