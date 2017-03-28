@@ -17,12 +17,13 @@ public class DoctorPatient extends AppCompatActivity {
         doctor = (TextView)findViewById(R.id.doc);
         patient = (TextView) findViewById(R.id.patien);
 
-        doctor.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+       doctor.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent doc = new Intent(DoctorPatient.this,AddPatient.class);
+               startActivity(doc);
+           }
+       });
 
         patient.setOnClickListener(new View.OnClickListener() {
             @Override

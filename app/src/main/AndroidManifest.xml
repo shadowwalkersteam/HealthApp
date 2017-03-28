@@ -21,10 +21,11 @@
         <activity android:name=".ActivitySignin" />
         <activity android:name=".ActivitySignup" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".DoctorPatient"></activity>
+        <activity android:name=".DoctorPatient" />
         <activity
             android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard"></activity>
+            android:label="@string/title_activity_dashboard" />
+        <activity android:name=".AddPatient"></activity>
     </application>
 
 </manifest>
