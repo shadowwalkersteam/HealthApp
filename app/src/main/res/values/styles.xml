@@ -18,6 +18,6 @@
 
     </style>
 
-    <style name="AppTheme.TransNav" parent="AppTheme" />
+    <!--<style name="AppTheme.TransNav" parent="AppTheme" />-->
 
 </resources>

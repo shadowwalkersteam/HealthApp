@@ -9,6 +9,14 @@
 
 
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="88dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/finallogo" />
+
 
     <com.example.zohai.customfonts.MyTextView
         android:id="@+id/doc"
@@ -23,9 +31,8 @@
         android:text="Doctor"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_above="@+id/or"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/or" />
 
     <TextView
         android:id="@+id/or"
@@ -35,9 +42,9 @@
         android:text="OR"
         android:textColor="#ADCCE2"
         android:textSize="20dp"
-        android:layout_marginBottom="12dp"
         android:layout_above="@+id/patien"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
 
     <com.example.zohai.customfonts.MyTextView
         android:id="@+id/patien"
@@ -53,7 +60,7 @@
         android:text="Patient"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:layout_marginBottom="42dp"
+        android:layout_marginBottom="33dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

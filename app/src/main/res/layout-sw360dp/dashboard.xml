@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#282f3c"
+    android:background="#eceff1"
     tools:context="com.example.zohai.healthapp.Dashboard">
 
     <FrameLayout
@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="#282"
+        android:background="#282f3c"
         app:menu="@menu/navigation" />
 
 </LinearLayout>

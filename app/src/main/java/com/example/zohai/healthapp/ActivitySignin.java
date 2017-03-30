@@ -25,7 +25,13 @@ public class ActivitySignin extends AppCompatActivity {
         sign = (TextView)findViewById(R.id.signin);
         forgot = (TextView)findViewById(R.id.forgt);
 
-
+        sign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent it = new Intent(ActivitySignin.this,Dashboard.class);
+//                startActivity(it);
+            }
+        });
         signinback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
