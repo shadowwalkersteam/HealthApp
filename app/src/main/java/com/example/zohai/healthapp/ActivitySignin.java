@@ -28,8 +28,8 @@ public class ActivitySignin extends AppCompatActivity {
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent it = new Intent(ActivitySignin.this,Dashboard.class);
-//                startActivity(it);
+                Intent it = new Intent(ActivitySignin.this,Dashboard.class);
+                startActivity(it);
             }
         });
         signinback.setOnClickListener(new View.OnClickListener() {
