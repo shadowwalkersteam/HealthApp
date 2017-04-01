@@ -18,7 +18,7 @@
         android:background="@drawable/finallogo" />
 
 
-            <com.example.zohai.customfonts.MyTextView
+                     <com.example.zohai.customfonts.MyTextView
                 android:id="@+id/doc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

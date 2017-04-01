@@ -20,8 +20,8 @@ public class DoctorPatient extends AppCompatActivity {
        doctor.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent doc = new Intent(DoctorPatient.this,AddPatient.class);
-               startActivity(doc);
+               Intent it = new Intent(DoctorPatient.this,AddPatient.class);
+               startActivity(it);
            }
        });
 
