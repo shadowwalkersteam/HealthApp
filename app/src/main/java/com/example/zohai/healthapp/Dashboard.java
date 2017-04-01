@@ -27,7 +27,7 @@ public class Dashboard extends AppCompatActivity {
                     case R.id.navigation_home:
                         mTextMessage.setText(R.string.title_home);
                         return true;
-                    case R.id.navigation_dashboard:
+                    case R.id.navigation_monitor:
                         mTextMessage.setText(R.string.title_dashboard);
                         return true;
                     case R.id.navigation_notifications:
