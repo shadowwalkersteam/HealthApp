@@ -135,13 +135,13 @@
             android:id="@+id/forgt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/linearLayout3"
+            android:layout_centerHorizontal="true"
             android:fontFamily="casual"
             android:text="Forgot Your Password?"
             android:textColor="#ADCCE2"
             android:textSize="17dp"
-            tools:fontFamily="sans-serif"
-            android:layout_below="@+id/linearLayout3"
-            android:layout_centerHorizontal="true" />
+            tools:fontFamily="sans-serif" />
 
     </RelativeLayout>
 
