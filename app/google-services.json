@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "17033262190",
+    "firebase_url": "https://healthapp-98a40.firebaseio.com",
+    "project_id": "healthapp-98a40",
+    "storage_bucket": "healthapp-98a40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:17033262190:android:9000a9a47e3176a9",
+        "android_client_info": {
+          "package_name": "com.example.zohai.healthapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "17033262190-kkpfnrr7h235l761jm7fks9tkejc82ve.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.zohai.healthapp",
+            "certificate_hash": "e05a7db6fd0817dc8f10748bcc74bad461d5e29d"
+          }
+        },
+        {
+          "client_id": "17033262190-o5od6v6grga57de3s383sg1sjs03r3e2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfnNl2GdeFueRuPJx7LFgyYWW8l79F9pE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "17033262190-o5od6v6grga57de3s383sg1sjs03r3e2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
