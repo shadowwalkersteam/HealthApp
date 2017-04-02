@@ -12,8 +12,9 @@
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
+        android:animateLayoutChanges="true">
 
     </FrameLayout>
 
@@ -24,6 +25,7 @@
         android:layout_gravity="start"
         android:background="#2374AB"
         android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorPrimaryLight"
         app:menu="@menu/navigation"
         app:itemIconTint="@color/colorIcon"
         app:itemTextColor="@color/colorText"

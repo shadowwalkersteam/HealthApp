@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/settingsm"
+        android:icon="@drawable/home1"
         android:title="@string/title_home" />
-    <!--<item-->
-        <!--android:id="@+id/navigation_dashboard"-->
-        <!--android:icon="@drawable/settings"-->
-        <!--android:title="@string/title_dashboard" />-->
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/settingsm"
-        android:title="@string/title_notifications" />
-    <item
         android:id="@+id/navigation_monitor"
-        android:icon="@drawable/ic_home"
-        android:title="@string/title_monitor"/>
+        android:icon="@drawable/monitoring24x24"
+        android:title="@string/title_monitor" />
+
+    <item
+        android:id="@+id/navigation_records"
+        android:icon="@drawable/records24x24"
+        android:title="@string/title_records" />
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/profle24x24"
+        android:title="@string/title_profile"/>
 
 </menu>
