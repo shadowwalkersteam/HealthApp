@@ -36,8 +36,12 @@
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".AddPatient"
-            android:theme="@style/AppFullScreenTheme"></activity>
-        <activity android:name=".ForgotPassword"></activity>
+            android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".ForgotPassword"
+            android:theme="@style/AppFullScreenTheme">
+
+        </activity>
+
     </application>
 
 </manifest>

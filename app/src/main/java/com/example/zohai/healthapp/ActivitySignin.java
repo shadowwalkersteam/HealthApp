@@ -41,5 +41,12 @@ public class ActivitySignin extends AppCompatActivity {
                 startActivity(it);
             }
         });
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ActivitySignin.this,ForgotPassword.class);
+                startActivity(intent);
+            }
+        });
     }
 }
