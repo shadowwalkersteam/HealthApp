@@ -27,26 +27,22 @@ public class Dashboard extends AppCompatActivity {
 
         BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
                 = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_home:
-//                        mTextMessage.setText(R.string.title_home);
                         selectedFragment = Home.newInstance();
-                        return true;
+                        break;
                     case R.id.navigation_monitor:
-//                        mTextMessage.setText(R.string.title_monitor);
-                        selectedFragment = Monitor.newInstance();
-                        return true;
+                         selectedFragment = Monitor.newInstance();
+                        break;
                     case R.id.navigation_records:
-//                        mTextMessage.setText(R.string.title_records);
                         selectedFragment = Records.newInstance();
-                        return true;
+                        break;
                     case R.id.navigation_profile:
-//                        mTextMessage.setText(R.string.title_profile);
                         selectedFragment = Profile.newInstance();
+                        break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.content, selectedFragment);
@@ -55,11 +51,9 @@ public class Dashboard extends AppCompatActivity {
             }
 
         };
-
-        mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
+        BottomNavigationView btmnavigation = (BottomNavigationView) findViewById(R.id.navigation);
+        btmnavigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        btmnavigation.setTranslucentNavigationEnabled(true);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content, Home.newInstance());
         transaction.commit();

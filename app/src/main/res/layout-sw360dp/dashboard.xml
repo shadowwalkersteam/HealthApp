@@ -16,19 +16,24 @@
         android:layout_above="@+id/navigation"
         android:animateLayoutChanges="true">
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@drawable/shadow"
+            android:layout_gravity="bottom"
+            />
+
     </FrameLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="start"
-        android:background="#2374AB"
+        android:layout_gravity="bottom"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/colorPrimaryLight"
         app:menu="@menu/navigation"
-        app:itemIconTint="@color/colorIcon"
-        app:itemTextColor="@color/colorText"
+        app:itemIconTint="@drawable/background"
+        app:itemTextColor="@drawable/background"
         />
 
 </RelativeLayout>
