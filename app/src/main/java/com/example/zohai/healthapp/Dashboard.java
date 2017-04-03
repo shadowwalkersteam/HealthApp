@@ -6,6 +6,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import com.example.zohai.Fragments.Records;
 public class Dashboard extends AppCompatActivity {
 
     private TextView mTextMessage;
+    Toolbar toolbar;
 
 
 
@@ -24,6 +26,8 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.dashboard);
+        initToolBar();
+
 
         BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
                 = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -57,6 +61,11 @@ public class Dashboard extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.content, Home.newInstance());
         transaction.commit();
+    }
+    public void initToolBar() {
+        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        toolbar.setTitle(R.string.tool_bar_title);
+        setSupportActionBar(toolbar);
     }
 
 }

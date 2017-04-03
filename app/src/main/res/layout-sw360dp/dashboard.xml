@@ -9,12 +9,19 @@
     android:background="#282f3c"
     tools:context="com.example.zohai.healthapp.Dashboard">
 
+<include layout="@layout/tool_bar"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    />
+
     <FrameLayout
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/navigation"
         android:animateLayoutChanges="true">
+
+
 
         <View
             android:layout_width="match_parent"

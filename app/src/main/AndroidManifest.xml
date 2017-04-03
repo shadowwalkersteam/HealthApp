@@ -13,7 +13,7 @@
         <activity
             android:name=".Dashboard"
             android:label="@string/title_activity_dashboard"
-            android:theme="@style/MyTheme.TranslucentNavigation" />
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".SplashScreen"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -37,7 +37,7 @@
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".AddPatient"
-            android:theme="@style/AppFullScreenTheme"/>
+            android:theme="@style/AppTheme"/>
         <activity android:name=".ForgotPassword"
             android:theme="@style/AppFullScreenTheme">
 
