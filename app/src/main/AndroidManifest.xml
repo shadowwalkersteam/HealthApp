@@ -12,10 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Dashboard"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/AppTheme" />
-        <activity
             android:name=".SplashScreen"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
             <intent-filter>
@@ -41,11 +37,11 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ForgotPassword"
-            android:theme="@style/AppFullScreenTheme"></activity>
+            android:theme="@style/AppFullScreenTheme"/>
         <activity
             android:name=".Dashboard2"
             android:label="@string/title_activity_dashboard2"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

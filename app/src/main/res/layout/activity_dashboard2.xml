@@ -11,7 +11,8 @@
     <include
         layout="@layout/app_bar_dashboard2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        />
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
@@ -19,6 +20,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#BDBDBD"
+        android:layout_marginTop="?attr/actionBarSize"
         android:fitsSystemWindows="true"
         app:menu="@menu/activity_dashboard2_drawer" />
 
