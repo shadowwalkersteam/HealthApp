@@ -4,7 +4,6 @@
     android:layout_height="58dp"
     android:background="@color/colorPrimary"
     android:minHeight="?attr/actionBarSize"
-    android:titleTextColor="#FDFDFDFD"
     android:id="@+id/tool_bar"
     android:elevation="4dp"
     >

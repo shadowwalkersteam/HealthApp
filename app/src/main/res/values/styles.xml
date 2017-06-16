@@ -11,7 +11,7 @@
         <!--<item name="android:windowNoTitle">true</item>-->
     </style>
 
-        <!--Style for no action bar and full screen-->
+    <!--Style for no action bar and full screen-->
     <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowActionBar">false</item>
@@ -19,10 +19,14 @@
 
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
     <!--<style name="AppTheme.TransNav" parent="AppTheme" />-->
 
-    <style name="MyTheme.TranslucentNavigation" parent="AppTheme">
-        <item name="android:windowTranslucentNavigation">true</item>
-    </style>
+    <!--<style name="MyTheme.TranslucentNavigation" parent="AppTheme">-->
+    <!--<item name="android:windowTranslucentNavigation">true</item>-->
+    <!--</style>-->
 
 </resources>

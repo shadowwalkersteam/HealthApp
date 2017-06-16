@@ -12,16 +12,15 @@ import com.example.zohai.healthapp.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Home extends Fragment {
-
-    public static Home newInstance()
+public class Settings extends Fragment {
+    public static Settings newInstance()
     {
-        Home fragment = new Home();
+        Settings fragment = new Settings();
         return fragment;
     }
 
 
-    public Home() {
+    public Settings() {
         // Required empty public constructor
     }
 
@@ -30,7 +29,7 @@ public class Home extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        return inflater.inflate(R.layout.fragment_settings, container, false);
     }
 
 }

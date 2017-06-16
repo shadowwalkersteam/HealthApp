@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zohai.healthapp">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -37,12 +38,14 @@
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".AddPatient"
-            android:theme="@style/AppTheme"/>
-        <activity android:name=".ForgotPassword"
-            android:theme="@style/AppFullScreenTheme">
-
-        </activity>
-
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ForgotPassword"
+            android:theme="@style/AppFullScreenTheme"></activity>
+        <activity
+            android:name=".Dashboard2"
+            android:label="@string/title_activity_dashboard2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
