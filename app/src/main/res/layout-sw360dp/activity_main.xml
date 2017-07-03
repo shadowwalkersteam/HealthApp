@@ -22,10 +22,10 @@
             android:textColor="#54abee"
             android:textSize="25dp" />
 
-        <TextView
+        <ImageView
             android:id="@+id/ozzon"
-            android:layout_width="160dp"
-            android:layout_height="30dp"
+            android:layout_width="165dp"
+            android:layout_height="27dp"
             android:layout_centerInParent="true"
             android:background="@drawable/appname" />
 

@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#282f3c"
-    tools:context="com.example.zohai.healthapp.Dashboard">
+    android:background="#FFF"
+    tools:context="com.example.zohai.healthapp.Dashboard2">
 
 
 
