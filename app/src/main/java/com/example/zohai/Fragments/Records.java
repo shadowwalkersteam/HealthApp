@@ -2,6 +2,7 @@ package com.example.zohai.Fragments;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,11 +43,14 @@ import com.example.zohai.healthapp.R;
 public class Records extends Fragment {
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
     private String heartVarId = "591f1d3a762542541ea9a798";
-//    private String humVarId = "565611777625421b5e91a1ef";
+    private String bloodVarId = "591f1d3a762542541ea9a799";
+    private String tempVarId = "591f1d3a762542541ea9a79c";
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     private LineChart heartchart;
+    private LineChart bloodchart;
+    private LineChart tempchart;
 
     public static Records newInstance()
     {
@@ -71,8 +75,13 @@ public class Records extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_records, container, false);
         heartchart = (LineChart) view.findViewById(R.id.heart_rate);
-        initChartTemp(heartchart);
+        bloodchart = (LineChart) view.findViewById(R.id.blood_pressure);
+        tempchart = (LineChart) view.findViewById(R.id.temperature);
+        initChartHeart(heartchart);
+        initChartBlood(bloodchart);
+        initChartTemp(tempchart);
 
+//        Heart Rate
         (new UbidotsClient()).handleUbidots(heartVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
@@ -114,19 +123,107 @@ public class Records extends Fragment {
 
             }
         });
+
+//        Blood Pressure
+        (new UbidotsClient()).handleUbidots(bloodVarId, API_KEY, new UbidotsClient.UbiListener() {
+            @Override
+            public void onDataReady(List<UbidotsClient.Value> result) {
+                Log.d("Chart", "======== On data Ready ===========");
+                ArrayList<Entry> entries = new ArrayList();
+                List<String> labels = new ArrayList<String>();
+                for (int i = 0; i < result.size(); i++) {
+
+                    Entry be = new Entry(result.get(i).value, i);
+                    entries.add(be);
+                    Log.d("Chart", be.toString());
+//                     Convert timestamp to date
+                    Date d = new Date(result.get(i).timestamp);
+                    // Create Labels
+                    labels.add(sdf.format(d));
+                }
+
+                LineDataSet lse = new LineDataSet(entries, "Blood Pressure");
+
+                lse.setDrawHighlightIndicators(false);
+                lse.setDrawValues(false);
+                lse.setColor(Color.BLUE);
+                lse.setCircleColor(Color.BLUE);
+                lse.setLineWidth(1f);
+                lse.setCircleSize(3f);
+                lse.setDrawCircleHole(false);
+                lse.setFillAlpha(65);
+                lse.setFillColor(Color.BLUE);
+
+                LineData ld = new LineData(labels, lse);
+                bloodchart.setData(ld);
+                Handler handler = new Handler(Records.this.getActivity().getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        bloodchart.invalidate();
+                    }
+                });
+
+            }
+        });
+
+//        Temperature
+        (new UbidotsClient()).handleUbidots(tempVarId, API_KEY, new UbidotsClient.UbiListener() {
+            @Override
+            public void onDataReady(List<UbidotsClient.Value> result) {
+                Log.d("Chart", "======== On data Ready ===========");
+                ArrayList<Entry> entries = new ArrayList();
+                List<String> labels = new ArrayList<String>();
+                for (int i = 0; i < result.size(); i++) {
+
+                    Entry be = new Entry(result.get(i).value, i);
+                    entries.add(be);
+                    Log.d("Chart", be.toString());
+//                     Convert timestamp to date
+                    Date d = new Date(result.get(i).timestamp);
+                    // Create Labels
+                    labels.add(sdf.format(d));
+                }
+
+                LineDataSet lse = new LineDataSet(entries, "Temperature");
+
+                lse.setDrawHighlightIndicators(false);
+                lse.setDrawValues(false);
+                lse.setColor(Color.BLUE);
+                lse.setCircleColor(Color.BLUE);
+                lse.setLineWidth(1f);
+                lse.setCircleSize(3f);
+                lse.setDrawCircleHole(false);
+                lse.setFillAlpha(65);
+                lse.setFillColor(Color.BLUE);
+
+                LineData ld = new LineData(labels, lse);
+                tempchart.setData(ld);
+                Handler handler = new Handler(Records.this.getActivity().getMainLooper());
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        tempchart.invalidate();
+                    }
+                });
+
+            }
+        });
+
         return view;
     }
 
-    private void initChartTemp(LineChart chart) {
+    private void initChartTemp(LineChart chart){
         chart.setTouchEnabled(true);
         chart.setPinchZoom(false);
-        chart.setDrawGridBackground(true);
+//        chart.setDrawGridBackground(false);
         chart.getAxisRight().setEnabled(false);
-//        chart.setDrawGridBackground(true);
+        chart.setDescription("Fahrenheit");
+        chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(90F);
-        leftAxis.setAxisMinValue(60F);
+        leftAxis.setAxisMaxValue(108F);
+        leftAxis.setAxisMinValue(97F);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
         leftAxis.setDrawGridLines(true);
@@ -137,6 +234,59 @@ public class Records extends Fragment {
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         xAxis.resetLabelsToSkip( );
         xAxis.setDrawGridLines(true);
+        xAxis.setAxisLineWidth(2);
+        xAxis.setDrawAxisLine(true);
+
+    }
+
+    private void initChartBlood(LineChart chart) {
+        chart.setTouchEnabled(true);
+        chart.setPinchZoom(false);
+//        chart.setDrawGridBackground(false);
+        chart.getAxisRight().setEnabled(false);
+        chart.setDescription("mmHg");
+        chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
+
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setAxisMaxValue(120F);
+        leftAxis.setAxisMinValue(80F);
+        leftAxis.setStartAtZero(false);
+        leftAxis.setAxisLineWidth(2);
+        leftAxis.setDrawGridLines(true);
+//        leftAxis.setGranularityEnabled(true);
+
+        // X-Axis
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.resetLabelsToSkip( );
+        xAxis.setDrawGridLines(true);
+        xAxis.setAxisLineWidth(2);
+        xAxis.setDrawAxisLine(true);
+
+    }
+
+    private void initChartHeart(LineChart chart) {
+        chart.setTouchEnabled(true);
+        chart.setPinchZoom(false);
+//        chart.setDrawGridBackground(false);
+        chart.getAxisRight().setEnabled(false);
+        chart.setDescription("BPM");
+        chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
+
+        YAxis leftAxis = chart.getAxisLeft();
+        leftAxis.setAxisMaxValue(100F);
+        leftAxis.setAxisMinValue(40F);
+        leftAxis.setStartAtZero(false);
+        leftAxis.setAxisLineWidth(2);
+        leftAxis.setDrawGridLines(true);
+//        leftAxis.setGranularityEnabled(true);
+
+        // X-Axis
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.resetLabelsToSkip( );
+        xAxis.setDrawGridLines(true);
+        xAxis.setAxisLineWidth(2);
         xAxis.setDrawAxisLine(true);
     }
 
