@@ -1,4 +1,5 @@
 package com.example.zohai.healthapp;
+import android.content.Intent;
 import android.util.Log;
 
 import com.squareup.okhttp.Callback;
@@ -16,6 +17,7 @@ import java.util.List;
 
 public class UbidotsClient {
     private UbiListener listener;
+//   private String datasource = "18fe3499f1da";
 
     public UbiListener getListener() {
         return listener;
@@ -25,13 +27,13 @@ public class UbidotsClient {
         this.listener = listener;
     }
 
-    public void handleUbidots(String varId, String apiKey, final UbiListener listener) {
+    public void handleUbidots(String Datasource, String varId, String apiKey, final UbiListener listener) {
 
         final List<Value> results = new ArrayList<>();
 
         OkHttpClient client = new OkHttpClient();
         Request req = new Request.Builder().addHeader("X-Auth-Token", apiKey)
-                .url("http://things.ubidots.com/api/v1.6/variables/" + varId + "/values")
+                .url("http://things.ubidots.com/api/v1.6/devices/" + Datasource + "/" + varId + "/values")
                 .build();
 
         client.newCall(req).enqueue(new Callback() {

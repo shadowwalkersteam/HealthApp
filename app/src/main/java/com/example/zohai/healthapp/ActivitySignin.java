@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +17,7 @@ public class ActivitySignin extends AppCompatActivity {
     ImageView signinback;
     TextView forgot;
     TextView sign;
+    EditText datasource;
 
 
     @Override
@@ -26,11 +28,13 @@ public class ActivitySignin extends AppCompatActivity {
         signinback = (ImageView)findViewById(R.id.signinback);
         sign = (TextView)findViewById(R.id.signin);
         forgot = (TextView)findViewById(R.id.forgt);
+        datasource = (EditText) findViewById(R.id.username);
 
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(ActivitySignin.this,Dashboard2.class);
+                it.putExtra("Datasource",datasource.getText().toString());
                 startActivity(it);
             }
         });

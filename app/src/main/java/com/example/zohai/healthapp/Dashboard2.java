@@ -1,5 +1,6 @@
 package com.example.zohai.healthapp;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -31,6 +32,7 @@ import com.example.zohai.Fragments.Settings;
 public class Dashboard2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView mTextMessage;
+    String datasource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

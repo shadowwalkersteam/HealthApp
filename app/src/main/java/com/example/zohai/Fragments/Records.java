@@ -1,6 +1,7 @@
 package com.example.zohai.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -40,17 +41,23 @@ import java.util.List;
 
 import com.example.zohai.healthapp.R;
 
-public class Records extends Fragment {
+public class Records extends Fragment{
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
-    private String heartVarId = "591f1d3a762542541ea9a798";
-    private String bloodVarId = "591f1d3a762542541ea9a799";
-    private String tempVarId = "591f1d3a762542541ea9a79c";
+//    private String heartVarId = "591f1d3a762542541ea9a798";
+//    private String bloodVarId = "591f1d3a762542541ea9a799";
+//    private String tempVarId = "591f1d3a762542541ea9a79c";
 
-    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    private String heartVarId = "heart-rate";
+    private String bloodVarId = "blood-pressure";
+    private String tempVarId = "temperature";
+
+
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
     private LineChart heartchart;
     private LineChart bloodchart;
     private LineChart tempchart;
+    String Datasource;
 
     public static Records newInstance()
     {
@@ -67,6 +74,7 @@ public class Records extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        Datasource = getActivity().getIntent().getStringExtra("Datasource");
     }
 
     @Override
@@ -82,7 +90,7 @@ public class Records extends Fragment {
         initChartTemp(tempchart);
 
 //        Heart Rate
-        (new UbidotsClient()).handleUbidots(heartVarId, API_KEY, new UbidotsClient.UbiListener() {
+        (new UbidotsClient()).handleUbidots( Datasource,heartVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
@@ -125,7 +133,7 @@ public class Records extends Fragment {
         });
 
 //        Blood Pressure
-        (new UbidotsClient()).handleUbidots(bloodVarId, API_KEY, new UbidotsClient.UbiListener() {
+        (new UbidotsClient()).handleUbidots( Datasource,bloodVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
@@ -168,7 +176,7 @@ public class Records extends Fragment {
         });
 
 //        Temperature
-        (new UbidotsClient()).handleUbidots(tempVarId, API_KEY, new UbidotsClient.UbiListener() {
+        (new UbidotsClient()).handleUbidots(Datasource, tempVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
@@ -232,7 +240,7 @@ public class Records extends Fragment {
         // X-Axis
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.resetLabelsToSkip( );
+        xAxis.resetLabelsToSkip();
         xAxis.setDrawGridLines(true);
         xAxis.setAxisLineWidth(2);
         xAxis.setDrawAxisLine(true);
@@ -249,7 +257,7 @@ public class Records extends Fragment {
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setAxisMaxValue(120F);
-        leftAxis.setAxisMinValue(80F);
+        leftAxis.setAxisMinValue(77F);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
         leftAxis.setDrawGridLines(true);
@@ -258,7 +266,7 @@ public class Records extends Fragment {
         // X-Axis
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.resetLabelsToSkip( );
+        xAxis.resetLabelsToSkip();
         xAxis.setDrawGridLines(true);
         xAxis.setAxisLineWidth(2);
         xAxis.setDrawAxisLine(true);
@@ -275,7 +283,7 @@ public class Records extends Fragment {
 
         YAxis leftAxis = chart.getAxisLeft();
         leftAxis.setAxisMaxValue(100F);
-        leftAxis.setAxisMinValue(40F);
+        leftAxis.setAxisMinValue(37F);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
         leftAxis.setDrawGridLines(true);
@@ -284,7 +292,7 @@ public class Records extends Fragment {
         // X-Axis
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-        xAxis.resetLabelsToSkip( );
+        xAxis.resetLabelsToSkip();
         xAxis.setDrawGridLines(true);
         xAxis.setAxisLineWidth(2);
         xAxis.setDrawAxisLine(true);
