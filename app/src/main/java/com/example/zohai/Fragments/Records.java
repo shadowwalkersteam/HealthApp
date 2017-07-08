@@ -24,6 +24,7 @@ import com.example.zohai.healthapp.UbidotsClient;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
+import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
 import com.github.mikephil.charting.data.BarData;
@@ -197,13 +198,13 @@ public class Records extends Fragment{
 
                 lse.setDrawHighlightIndicators(false);
                 lse.setDrawValues(false);
-                lse.setColor(Color.BLUE);
-                lse.setCircleColor(Color.BLUE);
+                lse.setColor(Color.DKGRAY);
+                lse.setCircleColor(Color.DKGRAY);
                 lse.setLineWidth(1f);
                 lse.setCircleSize(3f);
                 lse.setDrawCircleHole(false);
                 lse.setFillAlpha(65);
-                lse.setFillColor(Color.BLUE);
+                lse.setFillColor(Color.DKGRAY);
 
                 LineData ld = new LineData(labels, lse);
                 tempchart.setData(ld);
@@ -222,6 +223,14 @@ public class Records extends Fragment{
     }
 
     private void initChartTemp(LineChart chart){
+        //Limit Line
+        LimitLine ll1 = new LimitLine(103f, "High Temperature");
+        ll1.setLineWidth(1f);
+        ll1.enableDashedLine(10f, 4f, 0f);
+        ll1.setLineColor(Color.BLACK);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
+        ll1.setTextSize(8f);
+
         chart.setTouchEnabled(true);
         chart.setPinchZoom(false);
 //        chart.setDrawGridBackground(false);
@@ -234,6 +243,7 @@ public class Records extends Fragment{
         leftAxis.setAxisMinValue(97F);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
+        leftAxis.addLimitLine(ll1);
         leftAxis.setDrawGridLines(true);
 //        leftAxis.setGranularityEnabled(true);
 
@@ -248,6 +258,21 @@ public class Records extends Fragment{
     }
 
     private void initChartBlood(LineChart chart) {
+        //Limit line
+        LimitLine ll1 = new LimitLine(120f, "Normal Systolic");
+        ll1.setLineWidth(1f);
+        ll1.enableDashedLine(10f, 4f, 0f);
+        ll1.setLineColor(Color.BLACK);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
+        ll1.setTextSize(8f);
+
+        LimitLine ll2 = new LimitLine(80f, "Normal Diastolic");
+        ll2.setLineWidth(1f);
+        ll2.enableDashedLine(10f, 4f, 0f);
+        ll2.setLineColor(Color.BLACK);
+        ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
+        ll2.setTextSize(8f);
+
         chart.setTouchEnabled(true);
         chart.setPinchZoom(false);
 //        chart.setDrawGridBackground(false);
@@ -256,9 +281,11 @@ public class Records extends Fragment{
         chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(120F);
-        leftAxis.setAxisMinValue(77F);
+        leftAxis.setAxisMaxValue(140F);
+        leftAxis.setAxisMinValue(65F);
         leftAxis.setStartAtZero(false);
+        leftAxis.addLimitLine(ll1);
+        leftAxis.addLimitLine(ll2);
         leftAxis.setAxisLineWidth(2);
         leftAxis.setDrawGridLines(true);
 //        leftAxis.setGranularityEnabled(true);
@@ -274,6 +301,21 @@ public class Records extends Fragment{
     }
 
     private void initChartHeart(LineChart chart) {
+        //Limit line
+        LimitLine ll1 = new LimitLine(100f, "Normal Heart Rate");
+        ll1.setLineWidth(1f);
+        ll1.enableDashedLine(10f, 4f, 0f);
+        ll1.setLineColor(Color.BLACK);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
+        ll1.setTextSize(8f);
+
+        LimitLine ll2 = new LimitLine(60f, "Normal Heart Rate");
+        ll2.setLineWidth(1f);
+        ll2.enableDashedLine(10f, 4f, 0f);
+        ll2.setLineColor(Color.BLACK);
+        ll2.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
+        ll2.setTextSize(8f);
+
         chart.setTouchEnabled(true);
         chart.setPinchZoom(false);
 //        chart.setDrawGridBackground(false);
@@ -282,8 +324,10 @@ public class Records extends Fragment{
         chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(100F);
-        leftAxis.setAxisMinValue(37F);
+        leftAxis.setAxisMaxValue(160F);
+        leftAxis.setAxisMinValue(35F);
+        leftAxis.addLimitLine(ll1);
+        leftAxis.addLimitLine(ll2);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
         leftAxis.setDrawGridLines(true);
