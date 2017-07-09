@@ -53,63 +53,78 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/imageView2"
-            android:layout_marginTop="55dp"
             android:orientation="vertical"
-            android:weightSum="1">
+            android:weightSum="1"
+            android:layout_alignParentStart="true"
+            android:layout_above="@+id/forgt">
 
-
-            <com.example.zohai.customfonts.MyEditText
-                android:id="@+id/username"
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/signin_input_layout_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="22dp"
-                android:layout_marginRight="35dp"
-                android:layout_marginTop="20dp"
-                android:background="#0000"
-                android:drawableLeft="@drawable/ic_shape_1"
-                android:drawablePadding="16dp"
-                android:hint="Username"
-                android:inputType="text"
-                android:padding="16dp"
-                android:textColor="#ADCCE2"
+                android:layout_centerHorizontal="true"
                 android:textColorHint="#ADCCE2"
-                android:textSize="16dp" />
+                android:layout_marginTop="5dp">
 
+                <com.example.zohai.customfonts.MyEditText
+                    android:id="@+id/username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="35dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#0000"
+                    android:drawableLeft="@drawable/ic_shape_1"
+                    android:drawablePadding="16dp"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    android:textColor="#ADCCE2"
+                    android:textSize="16dp" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:background="#ADCCE2" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:background="#ADCCE2" />
 
-            <com.example.zohai.customfonts.MyEditText
-                android:id="@+id/password"
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/signin_input_layout_passsword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="22dp"
-                android:layout_marginRight="35dp"
-                android:background="#0000"
-                android:drawableLeft="@drawable/ic_tool_6"
-                android:drawablePadding="16dp"
-                android:hint="Password"
-                android:inputType="textPassword"
-                android:maxLength="12"
-                android:padding="16dp"
-                android:textColor="#ADCCE2"
+                android:layout_centerHorizontal="true"
                 android:textColorHint="#ADCCE2"
-                android:textSize="16dp" />
+                android:layout_marginTop="5dp">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"
-                android:background="#ADCCE2" />
+                <com.example.zohai.customfonts.MyEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="22dp"
+                    android:layout_marginRight="35dp"
+                    android:background="#0000"
+                    android:drawableLeft="@drawable/ic_tool_6"
+                    android:drawablePadding="16dp"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:maxLength="12"
+                    android:padding="16dp"
+                    android:textColor="#ADCCE2"
+                    android:textColorHint="#ADCCE2"
+                    android:textSize="16dp" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="40dp"
+                    android:background="#ADCCE2" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <com.example.zohai.customfonts.MyTextView
                 android:id="@+id/signin"
@@ -135,13 +150,14 @@
             android:id="@+id/forgt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/linearLayout3"
-            android:layout_centerHorizontal="true"
             android:fontFamily="casual"
             android:text="Forgot Your Password?"
             android:textColor="#ADCCE2"
             android:textSize="17dp"
-            tools:fontFamily="sans-serif" />
+            tools:fontFamily="sans-serif"
+            android:layout_marginBottom="28dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
 
