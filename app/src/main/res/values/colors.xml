@@ -9,5 +9,6 @@
     <color name="colorPrimaryLight">#4d63de</color>
     <color name="white">#FFFFFF</color>
     <color name="disable">#455A64</color>
+    <color name="menu_item">#000</color>
 
 </resources>

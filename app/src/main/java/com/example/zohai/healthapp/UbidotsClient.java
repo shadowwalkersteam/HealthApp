@@ -13,7 +13,7 @@ import java.util.List;
 
 public class UbidotsClient {
     private UbiListener listener;
-//   private String datasource = "18fe3499f1da";
+//   private String Datasource = "18fe3499f1da";
 
     public UbiListener getListener() {
         return listener;
@@ -23,7 +23,7 @@ public class UbidotsClient {
         this.listener = listener;
     }
 
-    public void handleUbidots(String Datasource, String varId, String apiKey, final UbiListener listener) {
+    public void handleUbidots(String Datasource ,String varId, String apiKey, final UbiListener listener) {
 
         final List<Value> results = new ArrayList<>();
 

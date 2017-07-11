@@ -15,14 +15,15 @@
 
     <string name="action_settings">Settings</string>
 
-    <item name="visible" type="id"/>
-    <item name="masked" type="id"/>
+    <item name="visible" type="id" />
+    <item name="masked" type="id" />
 
 
     <string name="err_msg_email">Enter a valid email.</string>
+    <string name="err_msg_id">Enter a valid ID.</string>
     <string name="err_msg_required">Required !!</string>
     <string name="err_msg_password">Enter a valid password with min 6 characters.</string>
-    <string  name="auth_failed">Authentication error, Please enter a valid email and password or sign up</string>
+    <string name="auth_failed">Authentication error, Please enter a valid email and password or sign up</string>
     <string name="forgot_password_msg">We just need your registered Email Id to sent you password reset instructions.</string>
 
 </resources>

@@ -37,11 +37,14 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ForgotPassword"
-            android:theme="@style/AppFullScreenTheme"/>
+            android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".Dashboard2"
             android:label="@string/title_activity_dashboard2"
-            android:theme="@style/AppTheme"/>
+            android:theme="@style/AppTheme" />
+
+        <activity android:name=".DatasourceID"
+            android:theme="@style/AppFullScreenTheme"  />
     </application>
 
 </manifest>

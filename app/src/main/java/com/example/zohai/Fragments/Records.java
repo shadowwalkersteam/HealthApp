@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.graphics.Color;
 import android.os.Handler;
 import android.util.Log;
+
+import com.example.zohai.healthapp.Dashboard2;
+import com.example.zohai.healthapp.DatasourceID;
 import com.example.zohai.healthapp.UbidotsClient;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
@@ -23,9 +26,6 @@ import com.example.zohai.healthapp.R;
 
 public class Records extends Fragment{
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
-//    private String heartVarId = "591f1d3a762542541ea9a798";
-//    private String bloodVarId = "591f1d3a762542541ea9a799";
-//    private String tempVarId = "591f1d3a762542541ea9a79c";
 
     private String heartVarId = "heart-rate";
     private String bloodVarId = "blood-pressure";
@@ -54,7 +54,9 @@ public class Records extends Fragment{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Datasource = getActivity().getIntent().getStringExtra("Datasource");
+        Datasource = getActivity().getIntent().getStringExtra("hello");
+//        DatasourceID activity = (DatasourceID)getActivity();
+//        Datasource = activity.id;
     }
 
     @Override

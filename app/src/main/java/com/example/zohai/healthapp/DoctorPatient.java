@@ -34,7 +34,7 @@ public class DoctorPatient extends AppCompatActivity {
                     startActivity(new Intent(DoctorPatient.this, MainActivity.class));
                     finish();
                 }else{
-                    startActivity(new Intent(DoctorPatient.this,Dashboard2.class));
+                    startActivity(new Intent(DoctorPatient.this,DatasourceID.class));
                 }
 
             }
