@@ -1,4 +1,6 @@
 package com.example.zohai.Fragments;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -31,6 +33,7 @@ public class Records extends Fragment{
     private String bloodVarId = "blood-pressure";
     private String tempVarId = "temperature";
 
+    SharedPreferences sharedPreferences;
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 
@@ -54,9 +57,8 @@ public class Records extends Fragment{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Datasource = getActivity().getIntent().getStringExtra("hello");
-//        DatasourceID activity = (DatasourceID)getActivity();
-//        Datasource = activity.id;
+        sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        Datasource = sharedPreferences.getString("DataID",null);
     }
 
     @Override
@@ -72,11 +74,11 @@ public class Records extends Fragment{
         initChartTemp(tempchart);
 
 //        Heart Rate
-        (new UbidotsClient()).handleUbidots( Datasource,heartVarId, API_KEY, new UbidotsClient.UbiListener() {
+        (new UbidotsClient()).handleUbidots(Datasource,heartVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
-                ArrayList<Entry> entries = new ArrayList();
+                List<Entry> entries = new ArrayList();
                 List<String> labels = new ArrayList<String>();
                 for (int i = 0; i < result.size(); i++) {
 
@@ -115,11 +117,11 @@ public class Records extends Fragment{
         });
 
 //        Blood Pressure
-        (new UbidotsClient()).handleUbidots( Datasource,bloodVarId, API_KEY, new UbidotsClient.UbiListener() {
+        (new UbidotsClient()).handleUbidots(Datasource,bloodVarId, API_KEY, new UbidotsClient.UbiListener() {
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
-                ArrayList<Entry> entries = new ArrayList();
+                List<Entry> entries = new ArrayList();
                 List<String> labels = new ArrayList<String>();
                 for (int i = 0; i < result.size(); i++) {
 
@@ -162,7 +164,7 @@ public class Records extends Fragment{
             @Override
             public void onDataReady(List<UbidotsClient.Value> result) {
                 Log.d("Chart", "======== On data Ready ===========");
-                ArrayList<Entry> entries = new ArrayList();
+                List<Entry> entries = new ArrayList();
                 List<String> labels = new ArrayList<String>();
                 for (int i = 0; i < result.size(); i++) {
 

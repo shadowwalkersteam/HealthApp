@@ -1,9 +1,12 @@
 package com.example.zohai.healthapp;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
@@ -40,6 +43,8 @@ public class Dashboard2 extends AppCompatActivity
     private TextView mTextMessage;
     String datasource;
     private FirebaseAuth auth;
+    SharedPreferences sharedPreferences;
+    private boolean exit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,8 +107,23 @@ public class Dashboard2 extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
+        }
+        else if (exit)
+        {
+            this.finishAffinity();
+
+        }
+        else {
+            Toast.makeText(this, "Press Back again to Exit.",
+                    Toast.LENGTH_SHORT).show();
+            exit = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    exit = false;
+                }
+            }, 3 * 1000);
+
         }
     }
 
@@ -123,6 +143,11 @@ public class Dashboard2 extends AppCompatActivity
 
             //noinspection SimplifiableIfStatement
             if (id == R.id.action_signout) {
+                sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("DataID");
+                editor.clear();
+                editor.commit();
                 auth.signOut();
                 return true;
             }

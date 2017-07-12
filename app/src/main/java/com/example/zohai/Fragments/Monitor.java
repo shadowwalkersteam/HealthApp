@@ -1,7 +1,9 @@
 package com.example.zohai.Fragments;
 
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,7 @@ import com.example.zohai.healthapp.R;
  * A simple {@link Fragment} subclass.
  */
 public class Monitor extends Fragment {
+    SharedPreferences sharedPreferences;
     String Datasource;
     private TextView hello;
     public static Monitor newInstance()
@@ -36,7 +39,10 @@ public class Monitor extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        Datasource = getActivity().getIntent().getStringExtra("hello");    }
+        sharedPreferences = getActivity().getSharedPreferences("MyPrefs",Context.MODE_PRIVATE);
+        Datasource = sharedPreferences.getString("DataID",null);
+//        Datasource = getActivity().getIntent().getStringExtra("hello");
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

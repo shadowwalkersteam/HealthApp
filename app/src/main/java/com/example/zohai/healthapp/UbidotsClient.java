@@ -75,7 +75,7 @@ public class UbidotsClient {
     }
 
     public interface  UbiListener {
-        public void onDataReady(List<Value> result);
+        public void onDataReady( List<Value> result);
     }
 }
 

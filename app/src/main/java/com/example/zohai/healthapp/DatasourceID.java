@@ -1,6 +1,8 @@
 package com.example.zohai.healthapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +19,7 @@ public class DatasourceID extends AppCompatActivity {
     public EditText uniqueID;
     private Button Submit;
     private TextInputLayout Datainputlayoutid;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,9 @@ public class DatasourceID extends AppCompatActivity {
         uniqueID = (EditText) findViewById(R.id.dataID);
         Submit = (Button) findViewById(R.id.confirm);
         Datainputlayoutid = (TextInputLayout) findViewById(R.id.data_input_layout_id);
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        if(sharedPreferences.contains("DataID"))
+            startActivity(new Intent(DatasourceID.this,Dashboard2.class));
 
         Submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,8 +45,12 @@ public class DatasourceID extends AppCompatActivity {
             return;
         }
         Datainputlayoutid.setErrorEnabled(false);
+        String dsource = uniqueID.getText().toString();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("DataID",dsource);
+        editor.commit();
         Intent it = new Intent(DatasourceID.this, Dashboard2.class);
-        it.putExtra("hello", uniqueID.getText().toString());
+//        it.putExtra("hello", uniqueID.getText().toString());
         startActivity(it);
     }
 
