@@ -105,10 +105,14 @@ public class Records extends Fragment{
 
                LineData ld = new LineData(labels, lse);
                 heartchart.setData(ld);
-                Handler handler = new Handler(Records.this.getActivity().getMainLooper());
+                heartchart.setVisibleXRangeMaximum(30);
+                final Handler handler = new Handler(Records.this.getActivity().getMainLooper());
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        heartchart.animateX(3000);
+                        heartchart.moveViewToX(-1);
+                        heartchart.notifyDataSetChanged();
                         heartchart.invalidate();
                     }
                 });
@@ -148,10 +152,14 @@ public class Records extends Fragment{
 
                 LineData ld = new LineData(labels, lse);
                 bloodchart.setData(ld);
-                Handler handler = new Handler(Records.this.getActivity().getMainLooper());
+                bloodchart.setVisibleXRangeMaximum(30);
+                final Handler handler = new Handler(Records.this.getActivity().getMainLooper());
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        bloodchart.animateX(3000);
+                        bloodchart.moveViewToX(-1);
+                        bloodchart.notifyDataSetChanged();
                         bloodchart.invalidate();
                     }
                 });
@@ -191,10 +199,14 @@ public class Records extends Fragment{
 
                 LineData ld = new LineData(labels, lse);
                 tempchart.setData(ld);
-                Handler handler = new Handler(Records.this.getActivity().getMainLooper());
+                tempchart.setVisibleXRangeMaximum(30);
+                final Handler handler = new Handler(Records.this.getActivity().getMainLooper());
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        tempchart.animateX(3000);
+                        tempchart.moveViewToX(-1);
+                        tempchart.notifyDataSetChanged();
                         tempchart.invalidate();
                     }
                 });
