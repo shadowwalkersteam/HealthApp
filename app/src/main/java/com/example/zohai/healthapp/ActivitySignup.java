@@ -90,7 +90,7 @@ public class ActivitySignup extends AppCompatActivity {
                 // the auth state listener will be notified and logic to handle the
                 // signed in user can be handled in the listener.
                 if (!task.isSuccessful()) {
-                    Log.d(TAG,"Authentication failed." + task.getException());
+                    Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
 
                 } else {
                     startActivity(new Intent(ActivitySignup.this, DatasourceID.class));
