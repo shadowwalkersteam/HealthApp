@@ -94,6 +94,7 @@ public class Profile extends Fragment {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
+//                for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 UserProfile user = dataSnapshot.getValue(UserProfile.class);
                 if (user == null) {
                     Toast.makeText(getActivity(), "No user profile found", Toast.LENGTH_SHORT).show();
@@ -103,6 +104,7 @@ public class Profile extends Fragment {
                 dob.setText(user.getAge());
                 email_id.setText(user.getEmail());
                 ph_nmbr.setText(user.getPhone());
+//                String blood = user.getGroup();
                 bldgrp.setText(user.getGroup());
 
                 progressDialog.dismiss();
@@ -136,7 +138,7 @@ public class Profile extends Fragment {
                 String DateOfBirth = dob.getText().toString().trim();
                 String EmailID = email_id.getText().toString().trim();
                 String PhoneNumber = ph_nmbr.getText().toString().trim();
-                String BloodGroup = bldgrp.getText().toString();
+                String BloodGroup = bldgrp.getText().toString().trim();
 
                 if (TextUtils.isEmpty(firebaseUser)) {
                     createUser(FullName, DateOfBirth, EmailID, PhoneNumber, BloodGroup);
@@ -192,8 +194,8 @@ public class Profile extends Fragment {
                 f_name.setText(user.name);
                 dob.setText(user.age);
                 email_id.setText(user.email);
-                bldgrp.setText(user.group);
                 ph_nmbr.setText(user.phone);
+                bldgrp.setText(user.group);
                 toggleButton();
 
             }

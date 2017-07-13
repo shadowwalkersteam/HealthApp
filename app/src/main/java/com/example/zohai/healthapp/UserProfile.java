@@ -37,6 +37,10 @@ public class UserProfile {
     {
         return group;
     }
+    public void setGroup(String group)
+    {
+        this.group=group;
+    }
 
 }
 
