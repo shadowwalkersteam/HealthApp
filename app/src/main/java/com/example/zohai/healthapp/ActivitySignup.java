@@ -93,7 +93,7 @@ public class ActivitySignup extends AppCompatActivity {
                     Log.d(TAG,"Authentication failed." + task.getException());
 
                 } else {
-                    startActivity(new Intent(ActivitySignup.this, Dashboard2.class));
+                    startActivity(new Intent(ActivitySignup.this, DatasourceID.class));
                     finish();
                 }
             }
