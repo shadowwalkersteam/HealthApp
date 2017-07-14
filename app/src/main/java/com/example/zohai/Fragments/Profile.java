@@ -36,9 +36,9 @@ public class Profile extends Fragment {
     private EditText dob;
     private EditText email_id;
     private EditText ph_nmbr;
-    private EditText bldgrp;
+//    private EditText blood;
     private Button update;
-    private String userId;
+//    private String userId;
     private ProgressDialog progressDialog;
 
     private DatabaseReference mFirebaseDatabase;
@@ -78,14 +78,14 @@ public class Profile extends Fragment {
         dob = (EditText) view.findViewById(R.id.age);
         email_id = (EditText) view.findViewById(R.id.Emailaddress);
         ph_nmbr = (EditText) view.findViewById(R.id.Phonenumber);
-        bldgrp = (EditText) view.findViewById(R.id.bloodgrp);
+//        blood = (EditText) view.findViewById(R.id.bloodgrp);
         update = (Button) view.findViewById(R.id.updateprofile);
 
         f_name.setEnabled(false);
         dob.setEnabled(false);
         email_id.setEnabled(false);
         ph_nmbr.setEnabled(false);
-        bldgrp.setEnabled(false);
+//        blood.setEnabled(false);
 
         progressDialog.setMessage("Getting your profile ready");
         progressDialog.show();
@@ -97,15 +97,14 @@ public class Profile extends Fragment {
 //                for (DataSnapshot snapshot : dataSnapshot.getChildren())
                 UserProfile user = dataSnapshot.getValue(UserProfile.class);
                 if (user == null) {
-                    Toast.makeText(getActivity(), "No user profile found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "No user data found. Please fill your details", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 f_name.setText(user.getName());
                 dob.setText(user.getAge());
                 email_id.setText(user.getEmail());
                 ph_nmbr.setText(user.getPhone());
-//                String blood = user.getGroup();
-                bldgrp.setText(user.getGroup());
+//                blood.setText(user.getGroup());
 
                 progressDialog.dismiss();
             }
@@ -125,7 +124,7 @@ public class Profile extends Fragment {
                 dob.setEnabled(true);
                 email_id.setEnabled(true);
                 ph_nmbr.setEnabled(true);
-                bldgrp.setEnabled(true);
+//                blood.setEnabled(true);
                 update.setVisibility(View.VISIBLE);
             }
         });
@@ -138,19 +137,19 @@ public class Profile extends Fragment {
                 String DateOfBirth = dob.getText().toString().trim();
                 String EmailID = email_id.getText().toString().trim();
                 String PhoneNumber = ph_nmbr.getText().toString().trim();
-                String BloodGroup = bldgrp.getText().toString().trim();
+//                String BloodGroup = blood.getText().toString();
 
                 if (TextUtils.isEmpty(firebaseUser)) {
-                    createUser(FullName, DateOfBirth, EmailID, PhoneNumber, BloodGroup);
+                    createUser(FullName, DateOfBirth, EmailID, PhoneNumber);
                 } else {
-                    updateUser(FullName, DateOfBirth, EmailID, PhoneNumber, BloodGroup);
+                    updateUser(FullName, DateOfBirth, EmailID, PhoneNumber);
                 }
 
                 f_name.setEnabled(false);
                 dob.setEnabled(false);
                 email_id.setEnabled(false);
                 ph_nmbr.setEnabled(false);
-                bldgrp.setEnabled(false);
+//                blood.setEnabled(false);
                 update.setVisibility(View.INVISIBLE);
 
             }
@@ -168,14 +167,14 @@ public class Profile extends Fragment {
         }
     }
 
-    private void createUser(String fullName, String dateOfBirth, String emailID, String phoneNumber, String bloodGroup) {
+    private void createUser(String fullName, String dateOfBirth, String emailID, String phoneNumber) {
         if (TextUtils.isEmpty(firebaseUser)) {
 
 //            userId = mFirebaseDatabase.push().getKey();
             firebaseUser = String.valueOf(mFirebaseDatabase.push());
         }
 
-        UserProfile user = new  UserProfile(fullName, dateOfBirth, emailID, phoneNumber, bloodGroup);
+        UserProfile user = new  UserProfile(fullName, dateOfBirth, emailID, phoneNumber);
 
         mFirebaseDatabase.child(firebaseUser).setValue(user);
 
@@ -188,14 +187,14 @@ public class Profile extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 UserProfile user = dataSnapshot.getValue(UserProfile.class);
                 if (user == null) {
-                    Toast.makeText(getActivity(), "User data is null", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "No user data found. Please fill your details", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 f_name.setText(user.name);
                 dob.setText(user.age);
                 email_id.setText(user.email);
                 ph_nmbr.setText(user.phone);
-                bldgrp.setText(user.group);
+//                blood.setText(user.group);
                 toggleButton();
 
             }
@@ -207,7 +206,7 @@ public class Profile extends Fragment {
         });
     }
 
-    private void updateUser(String fullName, String dateOfBirth, String emailID, String phoneNumber, String bloodGroup){
+    private void updateUser(String fullName, String dateOfBirth, String emailID, String phoneNumber){
 
         if (!TextUtils.isEmpty(fullName))
             mFirebaseDatabase.child(firebaseUser).child("name").setValue(fullName);
@@ -221,7 +220,7 @@ public class Profile extends Fragment {
         if (!TextUtils.isEmpty(phoneNumber))
             mFirebaseDatabase.child(firebaseUser).child("phone").setValue(phoneNumber);
 
-        if (!TextUtils.isEmpty(bloodGroup))
-            mFirebaseDatabase.child(firebaseUser).child("blood").setValue(bloodGroup);
+//        if (!TextUtils.isEmpty(bloodGroup))
+//            mFirebaseDatabase.child(firebaseUser).child("blood").setValue(bloodGroup);
     }
 }

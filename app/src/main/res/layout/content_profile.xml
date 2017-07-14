@@ -179,50 +179,50 @@
 
         <include layout="@layout/item_divider" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/selectableItemBackground"
-            android:clickable="true"
-            android:padding="@dimen/activity_horizontal_margin">
+        <!--<RelativeLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="?attr/selectableItemBackground"-->
+            <!--android:clickable="true"-->
+            <!--android:padding="@dimen/activity_horizontal_margin">-->
 
-            <ImageView
-                android:id="@+id/ivContactItem6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="@dimen/activity_horizontal_margin"
-                app:srcCompat="@drawable/ic_email_black"
-                android:visibility="invisible"
-                />
+            <!--<ImageView-->
+                <!--android:id="@+id/ivContactItem6"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_marginEnd="@dimen/activity_horizontal_margin"-->
+                <!--app:srcCompat="@drawable/ic_email_black"-->
+                <!--android:visibility="invisible"-->
+                <!--/>-->
 
-            <EditText
-                android:id="@+id/bloodgrp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_toEndOf="@id/ivContactItem6"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text=""
-                android:hint="Blood Group"
-                android:inputType="text"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="#212121" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/bloodgrp"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="8dp"
-                android:layout_toEndOf="@id/ivContactItem6"
-                android:text="Blood Group"
-                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                android:textColor="#727272" />
+            <!--<EditText-->
+                <!--android:id="@+id/bloodgrp"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_toEndOf="@id/ivContactItem6"-->
+                <!--android:ellipsize="end"-->
+                <!--android:maxLines="1"-->
+                <!--android:text=""-->
+                <!--android:hint="Blood Group"-->
+                <!--android:inputType="text"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+                <!--android:textColor="#212121" />-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/bloodgrp"-->
+                <!--android:layout_marginStart="@dimen/activity_horizontal_margin"-->
+                <!--android:layout_marginTop="8dp"-->
+                <!--android:layout_toEndOf="@id/ivContactItem6"-->
+                <!--android:text="Blood Group"-->
+                <!--android:textAppearance="@style/TextAppearance.AppCompat.Small"-->
+                <!--android:textColor="#727272" />-->
 
-        </RelativeLayout>
+        <!--</RelativeLayout>-->
 
-        <include layout="@layout/item_divider" />
+        <!--<include layout="@layout/item_divider" />-->
 
         <LinearLayout
             android:layout_width="match_parent"

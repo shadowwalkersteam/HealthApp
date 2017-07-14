@@ -13,12 +13,12 @@ public class UserProfile {
         // Default Constructor
     }
 
-    public UserProfile(String name, String age, String email, String phone, String group){
+    public UserProfile(String name, String age, String email, String phone){
         this.name = name;
         this.age = age;
         this.email = email;
         this.phone = phone;
-        this.group = group;
+//        this.group = group;
 
     }
     public String getName() {
@@ -33,14 +33,10 @@ public class UserProfile {
     public String getPhone() {
         return phone;
     }
-    public String getGroup()
-    {
-        return group;
-    }
-    public void setGroup(String group)
-    {
-        this.group=group;
-    }
+//    public String getGroup()
+//    {
+//        return group;
+//    }
 
 }
 

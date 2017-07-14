@@ -23,7 +23,9 @@ import com.example.zohai.healthapp.R;
 public class Monitor extends Fragment {
     SharedPreferences sharedPreferences;
     String Datasource;
-    private TextView hello;
+    private TextView heart_rate;
+    private TextView blood_pressure;
+    private TextView temperature;
     public static Monitor newInstance()
     {
         Monitor fragment = new Monitor();
@@ -47,10 +49,10 @@ public class Monitor extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_monitor, container, false);
-        hello = (TextView)view.findViewById(R.id.hello1);
-        hello.setText(Datasource);
+        heart_rate = (TextView) view.findViewById(R.id.heart);
+        blood_pressure = (TextView) view.findViewById(R.id.blood);
+        temperature = (TextView) view. findViewById(R.id.temperature);
         // Inflate the layout for this fragment
         return view;
     }
