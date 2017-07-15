@@ -43,8 +43,20 @@
             android:label="@string/title_activity_dashboard2"
             android:theme="@style/AppTheme" />
 
-        <activity android:name=".DatasourceID"
-            android:theme="@style/AppFullScreenTheme"  />
+        <activity android:name=".CheckFirebaseUser"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity
+            android:name=".DatasourceID"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity
+            android:name=".OfflineOnline"
+            android:theme="@style/AppFullScreenTheme" />
+
+        <activity android:name=".OfflineMode"
+            android:label="@string/title_activity_dashboard2"
+            android:theme="@style/AppTheme" />
+
     </application>
 
 </manifest>

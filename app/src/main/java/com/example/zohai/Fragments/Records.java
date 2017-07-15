@@ -175,7 +175,6 @@ public class Records extends Fragment{
                 List<Entry> entries = new ArrayList();
                 List<String> labels = new ArrayList<String>();
                 for (int i = 0; i < result.size(); i++) {
-
                     Entry be = new Entry(result.get(i).value, i);
                     entries.add(be);
                     Log.d("Chart", be.toString());

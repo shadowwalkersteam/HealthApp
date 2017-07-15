@@ -13,7 +13,6 @@ import java.util.List;
 
 public class UbidotsClient {
     private UbiListener listener;
-//   private String Datasource = "18fe3499f1da";
 
     public UbiListener getListener() {
         return listener;

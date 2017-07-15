@@ -17,11 +17,12 @@ public class SplashScreen extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent i = new Intent(SplashScreen.this, DoctorPatient.class);
+                Intent i = new Intent(SplashScreen.this, CheckFirebaseUser.class);
                 startActivity(i);
                 finish();
             }
         }, SPLASH_TIME_OUT);
+
 
     }
 }

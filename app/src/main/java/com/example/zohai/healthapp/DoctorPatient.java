@@ -13,8 +13,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class DoctorPatient extends AppCompatActivity {
     TextView doctor;
     TextView patient;
-    private FirebaseAuth.AuthStateListener authListener;
-    private FirebaseAuth auth;
+//    private FirebaseAuth.AuthStateListener authListener;
+//    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,23 +22,23 @@ public class DoctorPatient extends AppCompatActivity {
         setContentView(R.layout.activity_doctor_patient);
         doctor = (TextView)findViewById(R.id.doc);
         patient = (TextView) findViewById(R.id.patien);
-        auth = FirebaseAuth.getInstance();
-
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        authListener = new FirebaseAuth.AuthStateListener(){
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // if user is null launch login activity
-                    startActivity(new Intent(DoctorPatient.this, MainActivity.class));
-                    finish();
-                }else{
-                    startActivity(new Intent(DoctorPatient.this,DatasourceID.class));
-                }
-
-            }
-        };
+//        auth = FirebaseAuth.getInstance();
+//
+//        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//        authListener = new FirebaseAuth.AuthStateListener(){
+//            @Override
+//            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+//                FirebaseUser user = firebaseAuth.getCurrentUser();
+//                if (user == null) {
+//                    // if user is null launch login activity
+//                    startActivity(new Intent(DoctorPatient.this, MainActivity.class));
+//                    finish();
+//                }else{
+//                    startActivity(new Intent(DoctorPatient.this,DatasourceID.class));
+//                }
+//
+//            }
+//        };
 
        doctor.setOnClickListener(new View.OnClickListener() {
            @Override
@@ -56,10 +56,10 @@ public class DoctorPatient extends AppCompatActivity {
             }
         });
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        auth.addAuthStateListener(authListener);
+//    }
 
 }
