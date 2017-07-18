@@ -28,7 +28,7 @@ public class UbidotsClient {
 
         OkHttpClient client = new OkHttpClient();
         Request req = new Request.Builder().addHeader("X-Auth-Token", apiKey)
-                .url("http://things.ubidots.com/api/v1.6/devices/" + Datasource + "/" + varId + "/values")
+                .url("http://things.ubidots.com/api/v1.6/devices/" + Datasource + "/" + varId + "/values/?page_size=100")
                 .build();
 
         client.newCall(req).enqueue(new Callback() {

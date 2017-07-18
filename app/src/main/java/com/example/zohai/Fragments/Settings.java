@@ -13,6 +13,7 @@ import com.example.zohai.healthapp.R;
  * A simple {@link Fragment} subclass.
  */
 public class Settings extends Fragment {
+
     public static Settings newInstance()
     {
         Settings fragment = new Settings();

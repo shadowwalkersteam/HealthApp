@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:padding="10dp"
+            android:text="Emergency Contacts"
+            android:textColor="#000"
+            android:textSize="20dp" />
+    </RelativeLayout>
+
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="@dimen/activity_horizontal_margin">
-
     <ImageView
         android:id="@+id/ivContactItem"
         android:layout_width="wrap_content"
@@ -22,7 +42,9 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_toEndOf="@id/ivContactItem"
         android:layout_toRightOf="@id/ivContactItem"
-        android:text="+91 972-426-8906"
+        android:hint="+923351234567"
+        android:inputType="phone"
+        android:textColor="#212121"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
     <TextView
@@ -36,5 +58,45 @@
         android:layout_toRightOf="@id/ivContactItem"
         android:text="Mobile"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
-
 </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_horizontal_margin">
+    <ImageView
+        android:id="@+id/ivContactItem1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        app:srcCompat="@drawable/ic_phone_black" />
+
+    <EditText
+        android:id="@+id/tvNumber1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_toEndOf="@id/ivContactItem1"
+        android:layout_toRightOf="@id/ivContactItem1"
+        android:hint="+923351234567"
+        android:inputType="phone"
+        android:textColor="#212121"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvNumber1"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/ivContactItem1"
+        android:layout_toRightOf="@id/ivContactItem1"
+        android:text="Mobile"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+    </RelativeLayout>
+
+</LinearLayout>

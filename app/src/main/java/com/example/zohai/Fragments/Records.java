@@ -9,9 +9,12 @@ import android.view.ViewGroup;
 import android.graphics.Color;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
+import com.example.zohai.healthapp.ConnectivityReceiver;
 import com.example.zohai.healthapp.Dashboard2;
 import com.example.zohai.healthapp.DatasourceID;
+import com.example.zohai.healthapp.Myapplication;
 import com.example.zohai.healthapp.UbidotsClient;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
@@ -26,7 +29,7 @@ import java.util.Date;
 import java.util.List;
 import com.example.zohai.healthapp.R;
 
-public class Records extends Fragment{
+public class Records extends Fragment implements ConnectivityReceiver.ConnectivityReceiverListener{
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
 
     private String heartVarId = "heart-rate";
@@ -59,6 +62,30 @@ public class Records extends Fragment{
         super.onCreate(savedInstanceState);
         sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         Datasource = sharedPreferences.getString("DataID",null);
+
+        checkConnection();
+    }
+
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showToast(isConnected);
+    }
+
+    private void showToast(boolean isConnected) {
+        if (!isConnected) {
+            Toast.makeText(getActivity(),"Sorry! Not connected to internet",Toast.LENGTH_LONG).show();
+
+        }
+        else
+            Toast.makeText(getActivity(),"Good! Connected to Internet",Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        Myapplication.getInstance().setConnectivityListener(this);
+
     }
 
     @Override
@@ -336,4 +363,8 @@ public class Records extends Fragment{
         xAxis.setDrawAxisLine(true);
     }
 
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showToast(isConnected);
+    }
 }

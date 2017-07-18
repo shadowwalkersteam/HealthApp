@@ -31,6 +31,7 @@ import android.widget.Toast;
 
 import com.example.zohai.Fragments.BMI;
 import com.example.zohai.Fragments.BMR;
+import com.example.zohai.Fragments.EmergencyContacts;
 import com.example.zohai.Fragments.Monitor;
 import com.example.zohai.Fragments.Profile;
 import com.example.zohai.Fragments.Records;
@@ -173,7 +174,9 @@ public class Dashboard2 extends AppCompatActivity
             fragmentClass= Reminder.class;
 
         } else if (id == R.id.nav_settings) {
-            fragmentClass= Settings.class;
+            fragmentClass = Settings.class;
+        }else if (id == R.id.nav_emergency) {
+                fragmentClass= EmergencyContacts.class;
 
         }
         try {

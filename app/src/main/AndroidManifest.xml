@@ -3,8 +3,12 @@
     package="com.example.zohai.healthapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 
     <application
+        android:name=".Myapplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -42,21 +46,29 @@
             android:name=".Dashboard2"
             android:label="@string/title_activity_dashboard2"
             android:theme="@style/AppTheme" />
-
-        <activity android:name=".CheckFirebaseUser"
+        <activity
+            android:name=".CheckFirebaseUser"
             android:theme="@style/AppFullScreenTheme" />
-
         <activity
             android:name=".DatasourceID"
             android:theme="@style/AppFullScreenTheme" />
         <activity
             android:name=".OfflineOnline"
             android:theme="@style/AppFullScreenTheme" />
-
-        <activity android:name=".OfflineMode"
+        <activity
+            android:name=".OfflineMode"
             android:label="@string/title_activity_dashboard2"
             android:theme="@style/AppTheme" />
 
+        <receiver
+            android:name=".ConnectivityReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".BluetoothDeviceList"></activity>
     </application>
 
 </manifest>

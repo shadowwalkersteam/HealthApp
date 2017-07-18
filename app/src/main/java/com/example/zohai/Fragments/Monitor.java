@@ -3,14 +3,19 @@ package com.example.zohai.Fragments;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.zohai.healthapp.ConnectivityReceiver;
+import com.example.zohai.healthapp.Myapplication;
 import com.example.zohai.healthapp.R;
 import com.example.zohai.healthapp.UbidotsClient;
 
@@ -18,7 +23,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Monitor extends Fragment {
+public class Monitor extends Fragment implements ConnectivityReceiver.ConnectivityReceiverListener{
     SharedPreferences sharedPreferences;
     String Datasource;
     private TextView heart_rate;
@@ -55,8 +60,24 @@ public class Monitor extends Fragment {
         super.onCreate(savedInstanceState);
         sharedPreferences = getActivity().getSharedPreferences("MyPrefs",Context.MODE_PRIVATE);
         Datasource = sharedPreferences.getString("DataID",null);
+        checkConnection();
 
     }
+
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showToast(isConnected);
+    }
+
+    private void showToast(boolean isConnected) {
+        if (!isConnected) {
+            Toast.makeText(getActivity(),"Sorry! Not connected to internet",Toast.LENGTH_LONG).show();
+
+        }
+        else
+            Toast.makeText(getActivity(),"Good! Connected to Internet",Toast.LENGTH_LONG).show();
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -73,6 +94,8 @@ public class Monitor extends Fragment {
         // Inflate the layout for this fragment
         return view;
     }
+
+
     @Override
     public void onPause()
     {
@@ -84,10 +107,12 @@ public class Monitor extends Fragment {
     {
         super.onDestroy();
     }
+
     @Override
     public void onResume()
     {
         super.onResume();
+        Myapplication.getInstance().setConnectivityListener(this);
 
     }
 
@@ -172,4 +197,10 @@ public class Monitor extends Fragment {
         };
         timer.schedule(doAsynchronousTask, 0, 5000);
     }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showToast(isConnected);
+    }
+
 }

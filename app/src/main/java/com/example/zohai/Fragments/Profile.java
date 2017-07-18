@@ -17,6 +17,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.example.zohai.healthapp.ConnectivityReceiver;
+import com.example.zohai.healthapp.Myapplication;
 import com.example.zohai.healthapp.R;
 import com.example.zohai.healthapp.UserProfile;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,7 +32,7 @@ import com.google.firebase.database.ValueEventListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Profile extends Fragment {
+public class Profile extends Fragment implements ConnectivityReceiver.ConnectivityReceiverListener{
 
     private EditText f_name;
     private EditText dob;
@@ -66,6 +68,22 @@ public class Profile extends Fragment {
         mFirebaseInstance.getReference("App_title").setValue("Smart Health");
         progressDialog = new ProgressDialog(getActivity());
 
+        checkConnection();
+
+    }
+
+    private void checkConnection() {
+        boolean isConnected = ConnectivityReceiver.isConnected();
+        showToast(isConnected);
+    }
+
+    private void showToast(boolean isConnected) {
+        if (!isConnected) {
+            Toast.makeText(getActivity(),"Sorry! Not connected to internet",Toast.LENGTH_LONG).show();
+
+        }
+        else
+            Toast.makeText(getActivity(),"Good! Connected to Internet",Toast.LENGTH_LONG).show();
     }
 
 
@@ -158,6 +176,13 @@ public class Profile extends Fragment {
         
         return view;
     }
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        Myapplication.getInstance().setConnectivityListener(this);
+
+    }
 
     private void toggleButton() {
         if (TextUtils.isEmpty(firebaseUser)) {
@@ -222,5 +247,10 @@ public class Profile extends Fragment {
 
 //        if (!TextUtils.isEmpty(bloodGroup))
 //            mFirebaseDatabase.child(firebaseUser).child("blood").setValue(bloodGroup);
+    }
+
+    @Override
+    public void onNetworkConnectionChanged(boolean isConnected) {
+        showToast(isConnected);
     }
 }
