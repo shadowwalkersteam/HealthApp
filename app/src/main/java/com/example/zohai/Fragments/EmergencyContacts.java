@@ -5,16 +5,18 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.telephony.SmsManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 import com.example.zohai.healthapp.R;
 
-public class EmergencyContacts extends Fragment {
+public class EmergencyContacts extends Monitor {
     private EditText phone1;
     private EditText phone2;
     private String mobile1;
@@ -22,7 +24,10 @@ public class EmergencyContacts extends Fragment {
     private String shared_mobile1;
     private String shared_mobile2;
 
+
+
     SharedPreferences sharedPreferences;
+
 
     public static EmergencyContacts newInstance()
     {
@@ -42,8 +47,8 @@ public class EmergencyContacts extends Fragment {
         sharedPreferences = getActivity().getSharedPreferences("myContact",Context.MODE_PRIVATE);
         shared_mobile1 = sharedPreferences.getString("phone1",null);
         shared_mobile2 = sharedPreferences.getString("phone2",null);
-
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -90,5 +95,4 @@ public class EmergencyContacts extends Fragment {
 
         return view;
     }
-
 }
