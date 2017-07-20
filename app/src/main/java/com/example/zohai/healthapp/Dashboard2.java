@@ -41,10 +41,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard2 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    private TextView mTextMessage;
-    String datasource;
     private FirebaseAuth auth;
-    SharedPreferences sharedPreferences;
     private boolean exit = false;
 
     @Override
@@ -143,11 +140,18 @@ public class Dashboard2 extends AppCompatActivity
 
             //noinspection SimplifiableIfStatement
             if (id == R.id.action_signout) {
-                sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.remove("DataID");
+                SharedPreferences sp1 = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                SharedPreferences sp2 = getSharedPreferences("myContact",Context.MODE_PRIVATE);
+                SharedPreferences sp3 = getSharedPreferences("HealthValues",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sp1.edit();
+                SharedPreferences.Editor editor1 = sp2.edit();
+                SharedPreferences.Editor editor2 = sp3.edit();
                 editor.clear();
-                editor.commit();
+                editor1.clear();
+                editor2.clear();
+                editor1.apply();
+                editor.apply();
+                editor2.apply();
                 auth.signOut();
                 return true;
             }

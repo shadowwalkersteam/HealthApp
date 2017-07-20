@@ -19,12 +19,10 @@ import com.example.zohai.healthapp.R;
 public class EmergencyContacts extends Monitor {
     private EditText phone1;
     private EditText phone2;
-    private String mobile1;
-    private String mobile2;
     private String shared_mobile1;
     private String shared_mobile2;
 
-
+    private Button delete;
 
     SharedPreferences sharedPreferences;
 
@@ -57,29 +55,47 @@ public class EmergencyContacts extends Monitor {
         final View view = inflater.inflate(R.layout.fragment_emergency_contacts, container, false);
         phone1 = (EditText) view.findViewById(R.id.tvNumber);
         phone2 = (EditText) view.findViewById(R.id.tvNumber1);
+        delete = (Button) view.findViewById(R.id.delnumbers);
        final Button updateContact = (Button) view.findViewById(R.id.updatenumbers);
 
-        phone1.setText(sharedPreferences.getString("phone1",""));
-        phone2.setText(sharedPreferences.getString("phone2",""));
+//        phone1.setText(sharedPreferences.getString("phone1",""));
+//        phone2.setText(sharedPreferences.getString("phone2",""));
+
+        phone1.setText(shared_mobile1);
+        phone2.setText(shared_mobile2);
 
         phone1.setEnabled(false);
         phone2.setEnabled(false);
 
-
         updateContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mobile1 = phone1.getText().toString();
-                mobile2 = phone2.getText().toString();
                 SharedPreferences sp = getActivity().getSharedPreferences("myContact",Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sp.edit();
                 editor.putString("phone1",phone1.getText().toString());
                 editor.putString("phone2",phone2.getText().toString());
                 editor.commit();
 
+                Toast.makeText(getActivity(),"Please press monitor button below...",Toast.LENGTH_SHORT).show();
                 phone1.setEnabled(false);
                 phone2.setEnabled(false);
                 updateContact.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+        delete.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences = getActivity().getSharedPreferences("myContact",Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.remove("phone1");
+                editor.remove("phone2");
+                editor.clear();
+                editor.commit();
+                phone1.setText("");
+                phone2.setText("");
+
             }
         });
 

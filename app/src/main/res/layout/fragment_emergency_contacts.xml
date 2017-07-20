@@ -38,5 +38,21 @@
             android:textSize="16dp"
             android:visibility="invisible"
             />
+    <Button
+        android:id="@+id/delnumbers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rect3"
+        android:layout_below="@+id/updatenumbers"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:clickable="true"
+        android:textColor="#fff"
+        android:text="Delete Contacts"
+        android:textSize="16dp"
+        android:visibility="visible"
+        />
 
 </RelativeLayout>

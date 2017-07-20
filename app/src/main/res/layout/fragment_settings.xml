@@ -1,18 +1,167 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
     tools:context="com.example.zohai.Fragments.Settings">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:text="Set custom values"
+        android:textColor="#000"
+        android:textSize="20dp" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:textColor="#000"
-        android:textAlignment="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="9dp"
+        android:text="Max heart rate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView9"
+        android:layout_below="@+id/textView8"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:id="@+id/maxheart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
         android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#212121"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_marginStart="50dp"
+        android:layout_alignBaseline="@+id/textView9"
+        android:layout_alignBottom="@+id/textView9"
+        android:layout_toEndOf="@+id/textView3" />
 
-        android:text="Settings" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min heart rate"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView2"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/maxheart"
+        android:layout_alignStart="@+id/textView9" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/minheart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColor="#212121"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignStart="@+id/maxheart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max blood pressure"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView3"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/textView2"
+        android:layout_alignStart="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/maxblood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignStart="@+id/minheart" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min blood pressure"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView4"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignStart="@+id/textView3" />
+
+    <EditText
+        android:id="@+id/minblood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#212121"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignStart="@+id/maxblood" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Max temperature"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView5"
+        android:layout_below="@+id/textView4"
+        android:layout_alignStart="@+id/textView4"
+        android:layout_marginTop="40dp" />
+    <EditText
+        android:id="@+id/maxtemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignStart="@+id/minblood" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Min temperature "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/maxtemp"
+        android:layout_alignStart="@+id/textView5"
+        android:layout_marginTop="40dp" />
+    <EditText
+        android:id="@+id/mintemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_gravity="center"
+        android:textColor="#212121"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignStart="@+id/maxtemp" />
+    <Button
+        android:id="@+id/setvalue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect3"
+        android:padding="16dp"
+        android:clickable="true"
+        android:textColor="#fff"
+        android:layout_gravity="center"
+        android:text="Set values"
+        android:textSize="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textView6"
+        android:layout_marginTop="30dp" />
+
+</RelativeLayout>

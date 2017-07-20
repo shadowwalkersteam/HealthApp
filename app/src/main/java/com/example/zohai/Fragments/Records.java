@@ -77,7 +77,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
 
         }
         else
-            Toast.makeText(getActivity(),"Good! Connected to Internet",Toast.LENGTH_LONG).show();
+            Toast.makeText(getActivity(),"Good! Connected to Internet",Toast.LENGTH_SHORT).show();
     }
 
     @Override

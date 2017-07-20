@@ -42,7 +42,7 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_toEndOf="@id/ivContactItem"
         android:layout_toRightOf="@id/ivContactItem"
-        android:hint="+923351234567"
+        android:hint="03351234567"
         android:inputType="phone"
         android:textColor="#212121"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -81,7 +81,7 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_toEndOf="@id/ivContactItem1"
         android:layout_toRightOf="@id/ivContactItem1"
-        android:hint="+923351234567"
+        android:hint="03351234567"
         android:inputType="phone"
         android:textColor="#212121"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
