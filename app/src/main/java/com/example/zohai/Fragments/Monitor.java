@@ -114,7 +114,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_monitor, container, false);
+                View view = inflater.inflate(R.layout.fragment_monitor, container, false);
         heart_rate = (TextView) view.findViewById(R.id.heart);
         blood_pressure = (TextView) view.findViewById(R.id.blood);
         temperature = (TextView) view.findViewById(R.id.temp);
@@ -171,7 +171,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         }
         else
         {
-                     SMSThread();
+            SMSThread();
         }
     }
 
@@ -200,7 +200,6 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
 
     private void callAsynchronousTaskTemp() {
         final Handler handler = new Handler();
-//        timer = new Timer();
         doAsynchronousTask = new TimerTask() {
             @Override
             public void run() {
@@ -226,7 +225,6 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     }
     private void callAsynchronousTaskBlood() {
         final Handler handler = new Handler();
-//        timer = new Timer();
         doAsynchronousTask = new TimerTask() {
             @Override
             public void run() {
@@ -252,7 +250,6 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
 
     public void callAsynchronousTaskHeart() {
         final Handler handler = new Handler();
-//        timer = new Timer();
         doAsynchronousTask = new TimerTask() {
             @Override
             public void run() {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.zohai.healthapp.DoctorPatient"
+    android:background="#282f3c">
+
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="88dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="140dp"
+        android:background="@drawable/finallogo" />
+
+
+    <com.example.zohai.customfonts.MyTextView
+    android:id="@+id/byid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rect1"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Add by ID"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/or" />
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="casual"
+        android:text="OR"
+        android:textColor="#ADCCE2"
+        android:textSize="20dp"
+        android:layout_above="@+id/patien"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="12dp" />
+
+    <com.example.zohai.customfonts.MyTextView
+        android:id="@+id/byemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rect1"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Add by Email"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:layout_marginBottom="33dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

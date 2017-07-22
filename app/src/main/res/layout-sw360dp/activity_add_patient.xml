@@ -4,8 +4,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.healthapp.AddPatient"
-    android:background="#282f3c"
+    tools:context="com.example.zohai.healthapp.DoctorPanel.AddPatient"
+    android:background="#fff"
     >
+    <include
+        layout="@layout/appbar_offline_mode"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/addpatient"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_add_circle_outline_black_48dp"
+        android:drawablePadding="-170dp"
+        android:textStyle="bold"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Add Patient"
+        android:layout_marginTop="57dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/addpatient"
+        android:background="#000" />
+
+    <ListView
+        android:id="@+id/listpatient"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_weight="1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:longClickable="true"
+        android:layout_marginTop="119dp"
+        android:layout_alignParentBottom="true">
+    </ListView>
 
 </RelativeLayout>

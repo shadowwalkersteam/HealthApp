@@ -17,6 +17,7 @@ public class CheckFirebaseUser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_firebase_user);
+
         auth = FirebaseAuth.getInstance();
 
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -26,7 +27,7 @@ public class CheckFirebaseUser extends AppCompatActivity {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user == null) {
                     // if user is null launch login activity
-                    startActivity(new Intent(CheckFirebaseUser.this, OfflineOnline.class));
+                    startActivity(new Intent(CheckFirebaseUser.this, MainActivity.class));
                     finish();
                 }else{
                     startActivity(new Intent(CheckFirebaseUser.this,DatasourceID.class));

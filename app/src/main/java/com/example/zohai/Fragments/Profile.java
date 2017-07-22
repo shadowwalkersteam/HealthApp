@@ -116,20 +116,19 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
                 UserProfile user = dataSnapshot.getValue(UserProfile.class);
                 if (user == null) {
                     Toast.makeText(getActivity(), "No user data found. Please fill your details", Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
                     return;
+                } else {
+                    f_name.setText(user.getName());
+                    dob.setText(user.getAge());
+                    email_id.setText(user.getEmail());
+                    ph_nmbr.setText(user.getPhone());
                 }
-                f_name.setText(user.getName());
-                dob.setText(user.getAge());
-                email_id.setText(user.getEmail());
-                ph_nmbr.setText(user.getPhone());
-//                blood.setText(user.getGroup());
-
                 progressDialog.dismiss();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getActivity(), "Failed to read user", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -226,7 +225,6 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getActivity(), "Failed to read user", Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -6,15 +6,15 @@
     <item
         android:id="@+id/navigation_monitor"
         android:icon="@drawable/unnamed"
-        android:title="@string/title_monitor" />
+        android:title="Patient Monitor" />
 
     <item
         android:id="@+id/navigation_records"
         android:icon="@drawable/historyfinal"
-        android:title="@string/title_records" />
+        android:title="Patient Record" />
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/user99"
-        android:title="@string/title_profile"/>
+        android:title="Patient Profile"/>
 
 </menu>

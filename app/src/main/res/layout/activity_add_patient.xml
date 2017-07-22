@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.healthapp.AddPatient"
+    tools:context="com.example.zohai.healthapp.DoctorPanel.AddPatient"
     android:background="#282f3c"
     >
 

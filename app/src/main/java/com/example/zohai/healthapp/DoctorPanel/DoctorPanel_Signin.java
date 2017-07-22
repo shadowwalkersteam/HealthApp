@@ -1,32 +1,31 @@
-package com.example.zohai.healthapp;
+package com.example.zohai.healthapp.DoctorPanel;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.zohai.healthapp.ActivitySignin;
+import com.example.zohai.healthapp.DatasourceID;
+import com.example.zohai.healthapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ActivitySignin extends AppCompatActivity {
-
+public class DoctorPanel_Signin extends AppCompatActivity {
 
     ImageView signinback;
-    TextView forgot;
     private static final String TAG = "ActivitySignin";
     private TextView btn_sign;
     private EditText InputEmail, InputPassword;
@@ -34,17 +33,15 @@ public class ActivitySignin extends AppCompatActivity {
     private ProgressDialog progressDialog;
     private FirebaseAuth auth;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signin);
+        setContentView(R.layout.activity_doctor_panel__signin);
         auth = FirebaseAuth.getInstance();
         signinback = (ImageView)findViewById(R.id.signinback);
         btn_sign = (TextView)findViewById(R.id.signin);
         signinInputLayoutEmail = (TextInputLayout) findViewById(R.id.signin_input_layout_email);
         signinInputLayoutPassword = (TextInputLayout) findViewById(R.id.signin_input_layout_passsword);
-        forgot = (TextView)findViewById(R.id.forgt);
         InputEmail = (EditText) findViewById(R.id.username);
         InputPassword = (EditText) findViewById(R.id.password);
 
@@ -54,20 +51,6 @@ public class ActivitySignin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 submitForm();
-            }
-        });
-        signinback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent it = new Intent(ActivitySignin.this,MainActivity.class);
-                startActivity(it);
-            }
-        });
-        forgot.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ActivitySignin.this,ForgotPassword.class);
-                startActivity(intent);
             }
         });
     }
@@ -88,7 +71,7 @@ public class ActivitySignin extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(ActivitySignin.this, new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(DoctorPanel_Signin.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -99,10 +82,10 @@ public class ActivitySignin extends AppCompatActivity {
                 // signed in user can be handled in the listener.
                 if (!task.isSuccessful()) {
                     // there was an error
-                    Toast.makeText(ActivitySignin.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
+                    Toast.makeText(DoctorPanel_Signin.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
 
                 } else {
-                    Intent intent = new Intent(ActivitySignin.this, DatasourceID.class);
+                    Intent intent = new Intent(DoctorPanel_Signin.this, AddPatient.class);
                     startActivity(intent);
                     finish();
                 }

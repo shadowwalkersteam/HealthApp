@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
@@ -38,7 +38,8 @@
             android:name=".DoctorPatient"
             android:theme="@style/AppFullScreenTheme" />
         <activity
-            android:name=".AddPatient"
+            android:name=".DoctorPanel.AddPatient"
+            android:label="@string/title_activity_dashboard2"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".ForgotPassword"
@@ -69,7 +70,17 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".BluetoothDeviceList"></activity>
+        <activity android:name=".BluetoothDeviceList" />
+        <activity
+            android:name=".DoctorPanel.DoctorPanel_Signin"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity
+            android:name=".DoctorPanel.DoctorPanel_UniqueID"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity
+            android:name=".DoctorPanel.DoctorDashboard"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".DoctorPanel.AddByOptions"></activity>
     </application>
 
 </manifest>
