@@ -80,7 +80,13 @@
         <activity
             android:name=".DoctorPanel.DoctorDashboard"
             android:theme="@style/AppTheme" />
-        <activity android:name=".DoctorPanel.AddByOptions"></activity>
+        <activity
+            android:name=".DoctorPanel.AddByOptions"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity
+            android:name=".DoctorPanel.AddbyID"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".DoctorPanel.IdDashboard"></activity>
     </application>
 
 </manifest>

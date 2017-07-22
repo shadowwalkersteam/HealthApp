@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.zohai.healthapp.DoctorPanel.AddByOptions;
 import com.example.zohai.healthapp.DoctorPanel.AddPatient;
 
 public class DoctorPatient extends AppCompatActivity {
@@ -22,7 +23,7 @@ public class DoctorPatient extends AppCompatActivity {
        doctor.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent it = new Intent(DoctorPatient.this,AddPatient.class);
+               Intent it = new Intent(DoctorPatient.this,AddByOptions.class);
                startActivity(it);
            }
        });
