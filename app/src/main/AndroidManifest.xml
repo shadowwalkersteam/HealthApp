@@ -86,7 +86,9 @@
         <activity
             android:name=".DoctorPanel.AddbyID"
             android:theme="@style/AppTheme" />
-        <activity android:name=".DoctorPanel.IdDashboard"></activity>
+
+        <activity android:name=".DoctorPanel.IdDashboard"
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>
