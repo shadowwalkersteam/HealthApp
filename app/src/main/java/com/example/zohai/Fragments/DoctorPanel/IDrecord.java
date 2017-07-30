@@ -55,7 +55,7 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-
+        Datasource = getActivity().getIntent().getStringExtra("UniqueID");
         checkConnection();
     }
 

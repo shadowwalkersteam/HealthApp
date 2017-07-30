@@ -52,15 +52,13 @@ public class Dashboard2 extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         txtName = (TextView) findViewById(R.id.navname);
         txtEmail = (TextView) findViewById(R.id.navemail);
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        setSupportActionBar(toolbar);
         auth = FirebaseAuth.getInstance();
-
-        loadnavHeader();
 
         BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
                 = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -98,6 +96,8 @@ public class Dashboard2 extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        loadnavHeader();
     }
 
     private void loadnavHeader() {
