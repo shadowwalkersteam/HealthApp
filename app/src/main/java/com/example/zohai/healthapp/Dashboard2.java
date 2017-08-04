@@ -17,6 +17,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,7 @@ public class Dashboard2 extends AppCompatActivity
     private FirebaseDatabase mFirebaseInstance;
     private String firebaseUser;
 
+    private View navHeader;
     private TextView txtName, txtEmail;
 
     @Override
@@ -53,8 +55,6 @@ public class Dashboard2 extends AppCompatActivity
         setContentView(R.layout.activity_dashboard2);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        txtName = (TextView) findViewById(R.id.navname);
-        txtEmail = (TextView) findViewById(R.id.navemail);
         mFirebaseInstance = FirebaseDatabase.getInstance();
         mFirebaseDatabase = mFirebaseInstance.getReference("users");
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
@@ -96,6 +96,9 @@ public class Dashboard2 extends AppCompatActivity
         toggle.syncState();
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navHeader = navigationView.getHeaderView(0);
+        txtName = (TextView) navHeader.findViewById(R.id.navname);
+        txtEmail = (TextView) navHeader.findViewById(R.id.navemail);
 
         loadnavHeader();
     }
@@ -118,7 +121,6 @@ public class Dashboard2 extends AppCompatActivity
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
     }

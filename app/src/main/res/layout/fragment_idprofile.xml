@@ -1,12 +1,18 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.Fragments.DoctorPanel.IDprofile">
+    android:id="@+id/myCoordinatorLayout"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:gravity="center"
+        android:id="@+id/proInfo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:text="No data to display" />
 
-</FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

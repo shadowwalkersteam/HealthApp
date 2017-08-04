@@ -13,6 +13,8 @@ import com.example.zohai.Fragments.DoctorPanel.DoctorMonitor;
 import com.example.zohai.Fragments.DoctorPanel.DoctorProfile;
 import com.example.zohai.Fragments.DoctorPanel.DoctorRecord;
 import com.example.zohai.Fragments.DoctorPanel.IDmonitor;
+import com.example.zohai.Fragments.DoctorPanel.IDprofile;
+import com.example.zohai.Fragments.DoctorPanel.IDrecord;
 import com.example.zohai.healthapp.R;
 
 public class IdDashboard extends AppCompatActivity {
@@ -32,13 +34,13 @@ public class IdDashboard extends AppCompatActivity {
                 Fragment selectedFragment = null;
                 switch (item.getItemId()) {
                     case R.id.navigation_monitor:
-                        selectedFragment = DoctorMonitor.newInstance();
+                        selectedFragment = IDmonitor.newInstance();
                         break;
                     case R.id.navigation_records:
-                        selectedFragment = DoctorRecord.newInstance();
+                        selectedFragment = IDrecord.newInstance();
                         break;
                     case R.id.navigation_profile:
-                        selectedFragment = DoctorProfile.newInstance();
+                        selectedFragment = IDprofile.newInstance();
                         break;
                 }
                 FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

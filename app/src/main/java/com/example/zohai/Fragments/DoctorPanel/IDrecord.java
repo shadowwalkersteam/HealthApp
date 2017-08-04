@@ -1,6 +1,8 @@
 package com.example.zohai.Fragments.DoctorPanel;
 
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -83,7 +85,6 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_idrecord, container, false);
         heartchart = (LineChart) view.findViewById(R.id.heart_rate);
         bloodchart = (LineChart) view.findViewById(R.id.blood_pressure);
@@ -230,6 +231,7 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
 
             }
         });
+
         return view;
     }
     private void initChartTemp(LineChart chart){

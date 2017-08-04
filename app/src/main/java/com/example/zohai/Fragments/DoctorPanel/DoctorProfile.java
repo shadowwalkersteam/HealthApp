@@ -84,7 +84,7 @@ public class DoctorProfile extends Fragment implements ConnectivityReceiver.Conn
         email_id.setEnabled(false);
         ph_nmbr.setEnabled(false);
 
-        progressDialog.setMessage("Getting your profile ready");
+        progressDialog.setMessage("Getting patient profile ready");
         progressDialog.show();
 
         mFirebaseDatabase.child(firebaseUser).addValueEventListener(new ValueEventListener() {

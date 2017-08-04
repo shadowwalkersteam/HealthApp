@@ -15,8 +15,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class OfflineOnline extends AppCompatActivity implements ConnectivityReceiver.ConnectivityReceiverListener {
 
