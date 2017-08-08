@@ -78,6 +78,7 @@
                 android:layout_toEndOf="@id/ivdob"
                 android:text=""
                 android:hint="Your age"
+                android:maxLength="3"
                 android:inputType="number"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#212121" />
@@ -161,6 +162,7 @@
                 android:layout_toEndOf="@id/ivContactItem2"
                 android:text=""
                 android:hint="+923351234567"
+                android:maxLength="11"
                 android:inputType="phone"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#212121" />

@@ -44,6 +44,7 @@
         android:layout_toRightOf="@id/ivContactItem"
         android:hint="03351234567"
         android:inputType="phone"
+        android:maxLength="11"
         android:textColor="#212121"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -82,6 +83,7 @@
         android:layout_toEndOf="@id/ivContactItem1"
         android:layout_toRightOf="@id/ivContactItem1"
         android:hint="03351234567"
+        android:maxLength="11"
         android:inputType="phone"
         android:textColor="#212121"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
