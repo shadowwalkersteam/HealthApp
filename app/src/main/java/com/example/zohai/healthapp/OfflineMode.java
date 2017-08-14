@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +23,7 @@ public class OfflineMode extends AppCompatActivity {
     private TextView heart_rate;
     private TextView blood_pressure;
     private TextView temperature;
+    private Button TurnOn, TurnOff;
 
     Handler bluetoothIn;
 
@@ -47,7 +50,30 @@ public class OfflineMode extends AppCompatActivity {
         heart_rate = (TextView) findViewById(R.id.heart);
         blood_pressure = (TextView) findViewById(R.id.blood);
         temperature = (TextView) findViewById(R.id.temp);
+        TurnOn = (Button) findViewById(R.id.bton);
+        TurnOff = (Button) findViewById(R.id.btoff);
+
+        btAdapter = BluetoothAdapter.getDefaultAdapter();
+        // get Bluetooth adapter
+        checkBTState();
+
+        TurnOn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mConnectedThread.write("1");
+                Toast.makeText(getApplicationContext(),"Turned On",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        TurnOff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mConnectedThread.write("0");
+                Toast.makeText(getApplicationContext(),"Turned Off",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 
     private BluetoothSocket createBluetoothSocket(BluetoothDevice device) throws IOException {
 

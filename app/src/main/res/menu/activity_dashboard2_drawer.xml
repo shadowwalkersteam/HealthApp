@@ -4,16 +4,20 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_bmi"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="BMI" />
+            android:icon="@drawable/ic_favorite_black_24dp_bmi"
+            android:title="Body Mass" />
         <item
             android:id="@+id/nav_bmr"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="BMR" />
+            android:icon="@drawable/ic_favorite_black_24dp_bmi"
+            android:title="Body Metabolic" />
         <item
-            android:id="@+id/nav_reminder"
-            android:icon="@drawable/ic_alarm_black_24dp"
-            android:title="Medicine Reminder" />
+            android:id="@+id/nav_weight"
+            android:icon="@drawable/if_scale_1118204"
+            android:title="Weight Calculator" />
+        <item
+            android:id="@+id/nav_water"
+            android:icon="@drawable/if_bottled_water_1188686"
+            android:title="Water Needs" />
         <item
             android:id="@+id/nav_emergency"
             android:icon="@drawable/ic_contacts_black_24dp"

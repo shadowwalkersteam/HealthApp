@@ -167,6 +167,35 @@
         android:layout_toStartOf="@+id/textView4"
         />
 
-</RelativeLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="55dp">
+
+            <Button
+                android:id="@+id/bton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Turn On"
+                android:layout_marginRight="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/rect3"
+
+                />
+
+            <Button
+                android:id="@+id/btoff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:background="@drawable/rect3"
+                android:text="Turn Off"
+                 />
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </RelativeLayout>

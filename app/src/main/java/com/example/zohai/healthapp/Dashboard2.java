@@ -29,6 +29,7 @@ import com.example.zohai.Fragments.Profile;
 import com.example.zohai.Fragments.Records;
 import com.example.zohai.Fragments.Reminder;
 import com.example.zohai.Fragments.Settings;
+import com.example.zohai.Fragments.WaterNeeds;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -200,14 +201,17 @@ public class Dashboard2 extends AppCompatActivity
         } else if (id == R.id.nav_bmr) {
             fragmentClass= BMR.class;
 
-        } else if (id == R.id.nav_reminder) {
+        } else if (id == R.id.nav_weight) {
             fragmentClass= Reminder.class;
 
         } else if (id == R.id.nav_settings) {
             fragmentClass = Settings.class;
+
         }else if (id == R.id.nav_emergency) {
                 fragmentClass= EmergencyContacts.class;
-
+        }
+        else if (id == R.id.nav_water) {
+            fragmentClass= WaterNeeds.class;
         }
         try {
             fragment = (Fragment) fragmentClass.newInstance();
