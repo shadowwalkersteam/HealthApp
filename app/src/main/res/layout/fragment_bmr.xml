@@ -1,18 +1,182 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.Fragments.BMR">
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="com.example.zohai.Fragments.BMI">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/bmi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="#000"
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:text="Basal Metabolic Rate" />
 
-        android:text="BMR" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/bmi">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:layout_marginTop="25dp"
+            android:text="Height (ft , in)"
+            android:layout_marginStart="6dp"
+            android:id="@+id/height"
+            />
+        <EditText
+            android:id="@+id/ft"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            android:hint="Feet"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:maxLength="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/height"
+            />
+        <EditText
+            android:id="@+id/in"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:hint="Inches"
+            android:textColor="#212121"
+            android:maxLength="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/ft"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:layout_marginTop="30dp"
+            android:text="Weight (Kg)"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/height"
+            android:id="@+id/weight"
+            />
+        <EditText
+            android:id="@+id/kg"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="65dp"
+            android:hint="Kg"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:maxLength="3"
+            android:layout_below="@+id/ft"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/weight"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:layout_marginTop="30dp"
+            android:text="Age"
+            android:layout_marginStart="6dp"
+            android:layout_below="@+id/kg"
+            android:id="@+id/age1"
+            />
+        <EditText
+            android:id="@+id/age"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="years"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:maxLength="3"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="127dp"
+            android:layout_below="@+id/kg"
+            android:layout_toEndOf="@+id/age1"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout1"
+            android:layout_marginTop="84dp"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:padding="16dp"
+                android:clickable="true"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:text="Male"
+                android:textSize="16dp"
+                />
+            <Button
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:padding="16dp"
+                android:clickable="true"
+                android:textColor="#fff"
+                android:layout_toEndOf="@+id/male"
+                android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:text="Female"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/age1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:id="@+id/layout1">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#000"
+                android:hint="Results"
+                android:gravity="center"
+                android:maxLength="4"
+                android:id="@+id/result"
+                 />
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#000"
+                android:hint="Calories a day"
+                android:gravity="center"
+                android:id="@+id/unit"
+                android:layout_marginLeft="5dp"
+                android:layout_toEndOf="@+id/result"
+                />
+
+            </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -9,7 +9,7 @@
         <item
             android:id="@+id/nav_bmr"
             android:icon="@drawable/ic_favorite_black_24dp_bmi"
-            android:title="Body Metabolic" />
+            android:title="Basal Metabolic" />
         <item
             android:id="@+id/nav_weight"
             android:icon="@drawable/if_scale_1118204"
