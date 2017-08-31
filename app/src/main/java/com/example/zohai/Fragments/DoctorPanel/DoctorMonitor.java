@@ -40,8 +40,8 @@ public class DoctorMonitor extends Fragment implements ConnectivityReceiver.Conn
 
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
 
-    private String heartVarId = "heart-rate";
-    private String bloodVarId = "blood-pressure";
+    private String heartVarId = "heartrate";
+    private String bloodVarId = "bloodpressure";
     private String tempVarId = "temperature";
 
     public static DoctorMonitor newInstance() {
@@ -116,7 +116,7 @@ public class DoctorMonitor extends Fragment implements ConnectivityReceiver.Conn
                     @Override
                     public void onDataReadyDoctor(List<UbidotsClientDoctor.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             tempdata = Math.round(obj);
                         }
                     }
@@ -141,7 +141,7 @@ public class DoctorMonitor extends Fragment implements ConnectivityReceiver.Conn
                     @Override
                     public void onDataReadyDoctor(List<UbidotsClientDoctor.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             bloodata = Math.round(obj);
                         }
                     }
@@ -166,7 +166,7 @@ public class DoctorMonitor extends Fragment implements ConnectivityReceiver.Conn
                     @Override
                     public void onDataReadyDoctor(List<UbidotsClientDoctor.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             heartdata = Math.round(obj);
                         }
                     }

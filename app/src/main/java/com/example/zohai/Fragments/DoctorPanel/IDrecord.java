@@ -33,8 +33,8 @@ import java.util.List;
 public class IDrecord extends Fragment implements ConnectivityReceiver.ConnectivityReceiverListener{
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
 
-    private String heartVarId = "heart-rate";
-    private String bloodVarId = "blood-pressure";
+    private String heartVarId = "heartrate";
+    private String bloodVarId = "bloodpressure";
     private String tempVarId = "temperature";
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
@@ -251,8 +251,8 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
         chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(108F);
-        leftAxis.setAxisMinValue(97F);
+        leftAxis.setAxisMaxValue(110F);
+        leftAxis.setAxisMinValue(95F);
         leftAxis.setStartAtZero(false);
         leftAxis.setAxisLineWidth(2);
         leftAxis.addLimitLine(ll1);
@@ -293,8 +293,8 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
         chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(140F);
-        leftAxis.setAxisMinValue(65F);
+        leftAxis.setAxisMaxValue(200F);
+        leftAxis.setAxisMinValue(40F);
         leftAxis.setStartAtZero(false);
         leftAxis.addLimitLine(ll1);
         leftAxis.addLimitLine(ll2);
@@ -336,7 +336,7 @@ public class IDrecord extends Fragment implements ConnectivityReceiver.Connectiv
         chart.setGridBackgroundColor(Color.parseColor("#E1F5FE"));
 
         YAxis leftAxis = chart.getAxisLeft();
-        leftAxis.setAxisMaxValue(160F);
+        leftAxis.setAxisMaxValue(210F);
         leftAxis.setAxisMinValue(35F);
         leftAxis.addLimitLine(ll1);
         leftAxis.addLimitLine(ll2);

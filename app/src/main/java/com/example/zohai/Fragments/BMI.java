@@ -71,11 +71,11 @@ public class BMI extends Fragment {
 
                     results.setText(Double.toString(sum));
 
-                    if(sum >= 18.5 || sum  <=   25)
+                    if(sum >= 18.5 && sum  <=   25)
                     {
                         condition.setText("Normal (healthy weight)");
                     }
-                    else if (sum >= 16 || sum <=18.5 )
+                    else if (sum >= 16 && sum <=18.5 )
                     {
                         condition.setText("Underweight");
                     }
@@ -83,7 +83,7 @@ public class BMI extends Fragment {
                     {
                         condition.setText("Severely underweight");
                     }
-                    else if (sum >=25 || sum <= 30)
+                    else if (sum >=25 && sum <= 30)
                     {
                         condition.setText("Overweight");
                     }

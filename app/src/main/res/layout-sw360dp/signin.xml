@@ -78,6 +78,7 @@
                     android:drawablePadding="16dp"
                     android:hint="Email"
                     android:inputType="textEmailAddress"
+                    android:maxLength="254"
                     android:padding="16dp"
                     android:textColor="#ADCCE2"
                     android:textSize="16dp" />

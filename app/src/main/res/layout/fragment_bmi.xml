@@ -116,6 +116,7 @@
                 android:textColor="#000"
                 android:hint="Results"
                 android:gravity="center"
+                android:layout_centerHorizontal="true"
                 android:maxLength="4"
                 android:id="@+id/result"
                />
@@ -125,6 +126,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="#000"
                 android:gravity="center"
+                android:layout_centerHorizontal="true"
                 android:id="@+id/status"
                 android:layout_marginTop="20dp"
                 android:layout_below="@+id/result"

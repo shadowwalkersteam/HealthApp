@@ -68,7 +68,7 @@ public class DatasourceID extends AppCompatActivity {
     }
 
     private boolean isIDValid(String id) {
-        return (id.length() >= 6);
+        return (id.length() >= 8);
     }
 
     private void requestFocus(View view) {

@@ -38,12 +38,12 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     public int bloodata;
     public int tempdata;
 
-    public int maxHeart = 130;
+    public int maxHeart = 120;
     public int minHeart = 50;
     public int maxBlood = 130;
     public int minBlood = 75;
     public int maxTemp = 101;
-    public int minTemp = 97;
+    public int minTemp = 96;
     SharedPreferences shared2;
 
     public int Heart1 ;
@@ -62,8 +62,8 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
 
     private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
 
-    private String heartVarId = "heart-rate";
-    private String bloodVarId = "blood-pressure";
+    private String heartVarId = "heartrate";
+    private String bloodVarId = "bloodpressure";
     private String tempVarId = "temperature";
 
 
@@ -207,7 +207,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
                     @Override
                     public void onDataReady(List<UbidotsClient.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             tempdata = Math.round(obj);
                         }
                     }
@@ -232,7 +232,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
                     @Override
                     public void onDataReady(List<UbidotsClient.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             bloodata = Math.round(obj);
                         }
                     }
@@ -257,7 +257,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
                     @Override
                     public void onDataReady(List<UbidotsClient.Value> result) {
                         for (int i = 0; i < result.size(); i++) {
-                            float obj = result.get(i).value;
+                            float obj = result.get(0).value;
                             heartdata = Math.round(obj);
                         }
                     }
