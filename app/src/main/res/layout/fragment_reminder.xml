@@ -1,17 +1,134 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.Fragments.Reminder">
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="com.example.zohai.Fragments.BMI">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:layout_marginTop="8dp"
+        android:id="@+id/bmi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         android:textColor="#000"
-        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
         android:layout_gravity="center"
+        android:text="Weight Calculator" />
 
-        android:text="Reminder" />
-</FrameLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/bmi">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:layout_marginTop="25dp"
+            android:text="Height (ft , in)"
+            android:layout_marginStart="6dp"
+            android:id="@+id/height"
+            />
+        <EditText
+            android:id="@+id/ft"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            android:hint="Feet"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:maxLength="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/height"
+            />
+        <EditText
+            android:id="@+id/in"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:hint="Inches"
+            android:textColor="#212121"
+            android:maxLength="2"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/ft"
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout2"
+            android:layout_marginTop="100dp"
+            android:layout_centerHorizontal="true">
+
+            <Button
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:padding="16dp"
+                android:clickable="true"
+                android:textColor="#fff"
+                android:layout_gravity="center"
+                android:text="Male"
+                android:textSize="16dp"
+                />
+            <Button
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:padding="16dp"
+                android:clickable="true"
+                android:textColor="#fff"
+                android:layout_toEndOf="@+id/male"
+                android:layout_marginLeft="50dp"
+                android:layout_gravity="center"
+                android:text="Female"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/in"
+            android:layout_marginTop="90dp"
+            android:id="@+id/layout2"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#000"
+                android:hint="Results"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:maxLength="4"
+                android:id="@+id/result"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000"
+                android:gravity="center"
+                android:text="KG"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/status"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/result"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

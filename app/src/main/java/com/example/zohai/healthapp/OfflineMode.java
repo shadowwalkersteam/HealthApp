@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Arrays;
 import java.util.UUID;
 
 public class OfflineMode extends AppCompatActivity {
@@ -24,6 +25,10 @@ public class OfflineMode extends AppCompatActivity {
     private TextView blood_pressure;
     private TextView temperature;
     private Button TurnOn, TurnOff;
+
+    String sensor0;
+    String sensor1;
+    String sensor2;
 
     Handler bluetoothIn;
 
@@ -52,6 +57,55 @@ public class OfflineMode extends AppCompatActivity {
         temperature = (TextView) findViewById(R.id.temp);
         TurnOn = (Button) findViewById(R.id.bton);
         TurnOff = (Button) findViewById(R.id.btoff);
+
+        bluetoothIn = new Handler() {
+            public void handleMessage(android.os.Message msg) {
+                if (msg.what == handlerState) {										//if message is what we want
+                    String readMessage = (String) msg.obj;                                                                // msg.arg1 = bytes from connect thread
+                    recDataString.append(readMessage);      								//keep appending to string until ~
+                    int endOfLineIndex = recDataString.indexOf("~");                    // determine the end-of-line
+                    if (endOfLineIndex > 0) {                                           // make sure there data before ~
+                        String dataInPrint = recDataString.substring(0, endOfLineIndex);    // extract string
+//                        txtString.setText("Data Received = " + dataInPrint);
+                        int dataLength = dataInPrint.length();							//get length of data received
+//                        txtStringLength.setText("String Length = " + String.valueOf(dataLength));
+
+                        if (recDataString.charAt(0) == '#')								//if it starts with # we know it is what we are looking for
+                        {
+                             sensor0 = recDataString.substring(1,5);             //get sensor value from string between indices 1-5
+//                             sensor1 = recDataString.substring(4,6);            //same again...
+//                             sensor2 = recDataString.substring(6, 9);
+//                            String sensor3 = recDataString.substring(16, 20);
+
+                            heart_rate.setText(sensor0);	//update the textviews with sensor values
+                            heart_rate.invalidate();
+//                            temperature.setText(sensor1);
+//                            blood_pressure.setText(sensor2);
+//                            sensorView2.setText(" Sensor 2 Voltage = " + sensor2 + "V");
+//                            sensorView3.setText(" Sensor 3 Voltage = " + sensor3 + "V");
+                        }
+
+                        if (recDataString.charAt(6) == '%')
+                        {
+                            sensor1 = recDataString.substring(7,10);
+                            temperature.setText(sensor1);
+                            temperature.invalidate();
+                        }
+
+                        if (recDataString.charAt(11) == '&')
+                        {
+                            sensor2 = recDataString.substring(12,16);
+                            blood_pressure.setText(sensor2);
+                            blood_pressure.invalidate();
+                        }
+
+                            recDataString.delete(0, recDataString.length()); 					//clear all string data
+                        // strIncom =" ";
+//                        dataInPrint = " ";
+                    }
+                }
+            }
+        };
 
         btAdapter = BluetoothAdapter.getDefaultAdapter();
         // get Bluetooth adapter

@@ -1,13 +1,100 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.zohai.Fragments.WaterNeeds">
+    android:layout_marginTop="?attr/actionBarSize"
+    tools:context="com.example.zohai.Fragments.BMI">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:id="@+id/bmi"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+        android:textColor="#000"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="Water Needs" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/bmi">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#000"
+            android:layout_marginTop="25dp"
+            android:text="Physical Activity (minutes)"
+            android:layout_marginStart="6dp"
+            android:id="@+id/height"
+            />
+        <EditText
+            android:id="@+id/mint"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:layout_marginLeft="50dp"
+            android:hint="22"
+            android:gravity="center"
+            android:textColor="#212121"
+            android:maxLength="5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_toEndOf="@+id/height"
+            />
+
+        <Button
+            android:id="@+id/watercalc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect3"
+            android:padding="16dp"
+            android:clickable="true"
+            android:textColor="#fff"
+            android:layout_gravity="center"
+            android:text="Calculate water need"
+            android:textSize="16dp"
+            android:layout_below="@+id/layout2"
+            android:layout_marginTop="90dp"
+            android:layout_centerHorizontal="true"/>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mint"
+            android:layout_marginTop="90dp"
+            android:id="@+id/layout2"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#000"
+                android:hint="Results"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:maxLength="4"
+                android:id="@+id/result"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="#000"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/status"
+                android:text="Liters"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/result"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>
