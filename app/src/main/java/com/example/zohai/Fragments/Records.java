@@ -96,6 +96,8 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
         heartchart = (LineChart) view.findViewById(R.id.heart_rate);
         bloodchart = (LineChart) view.findViewById(R.id.blood_pressure);
         tempchart = (LineChart) view.findViewById(R.id.temperature);
+
+        //initialize chart properties
         initChartHeart(heartchart);
         initChartBlood(bloodchart);
         initChartTemp(tempchart);
@@ -118,6 +120,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                     labels.add(sdf.format(d));
                 }
 
+                //declare the data set
                 LineDataSet lse = new LineDataSet(entries, "Heart Rate");
 
                 lse.setDrawHighlightIndicators(false);
@@ -130,6 +133,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                 lse.setFillAlpha(65);
                 lse.setFillColor(Color.RED);
 
+                //populate the chart with data
                LineData ld = new LineData(labels, lse);
                 heartchart.setData(ld);
                 heartchart.setVisibleXRangeMaximum(30);
@@ -165,6 +169,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                     labels.add(sdf.format(d));
                 }
 
+                //declare the data set
                 LineDataSet lse = new LineDataSet(entries, "Blood Pressure");
 
                 lse.setDrawHighlightIndicators(false);
@@ -177,6 +182,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                 lse.setFillAlpha(65);
                 lse.setFillColor(Color.BLUE);
 
+                //populate the chart with data
                 LineData ld = new LineData(labels, lse);
                 bloodchart.setData(ld);
                 bloodchart.setVisibleXRangeMaximum(30);
@@ -211,6 +217,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                     labels.add(sdf.format(d));
                 }
 
+                //declare the data set
                 LineDataSet lse = new LineDataSet(entries, "Temperature");
 
                 lse.setDrawHighlightIndicators(false);
@@ -223,6 +230,7 @@ public class Records extends Fragment implements ConnectivityReceiver.Connectivi
                 lse.setFillAlpha(65);
                 lse.setFillColor(Color.DKGRAY);
 
+                //populate the chart with data
                 LineData ld = new LineData(labels, lse);
                 tempchart.setData(ld);
                 tempchart.setVisibleXRangeMaximum(30);

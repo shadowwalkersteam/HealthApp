@@ -61,6 +61,7 @@ public class Dashboard2 extends AppCompatActivity
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser().getUid();
         auth = FirebaseAuth.getInstance();
 
+        //bottom navigation view listener
         BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
                 = new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -90,6 +91,7 @@ public class Dashboard2 extends AppCompatActivity
         transaction.replace(R.id.content, Monitor.newInstance());
         transaction.commit();
 
+        //navigation drawer initialization
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -104,6 +106,7 @@ public class Dashboard2 extends AppCompatActivity
         loadnavHeader();
     }
 
+    //load nav header with username and email
     private void loadnavHeader() {
         mFirebaseDatabase.child(firebaseUser).addValueEventListener(new ValueEventListener() {
             @Override

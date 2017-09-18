@@ -25,8 +25,9 @@ public class UbidotsClient {
     public void handleUbidots(String Datasource ,String varId, String apiKey, final UbiListener listener) {
 
         final List<Value> results = new ArrayList<>();
-
+        //creating Okhttp bject
         OkHttpClient client = new OkHttpClient();
+        //sending get request to Ubidots server
         Request req = new Request.Builder().addHeader("X-Auth-Token", apiKey)
                 .url("http://things.ubidots.com/api/v1.6/devices/" + Datasource + "/" + varId + "/values/?page_size=100")
                 .build();
@@ -38,11 +39,12 @@ public class UbidotsClient {
                 e.printStackTrace();
             }
 
+            //get response from sever in the form on JSON
             @Override
             public void onResponse(Response response) throws IOException {
                 String body = response.body().string();
                 Log.d("Chart", body);
-
+                //interpreting the JSON
                 try {
                     JSONObject jObj = new JSONObject(body);
                     JSONArray jRes = jObj.getJSONArray("results");
@@ -66,13 +68,15 @@ public class UbidotsClient {
 
     }
 
-
+    //class to store incoming values
     public static class Value {
         public float value;
        public long timestamp;
 
     }
 
+    //interface that will be inherit in other classes
+    //holds list of results
     public interface  UbiListener {
         public void onDataReady( List<Value> result);
     }

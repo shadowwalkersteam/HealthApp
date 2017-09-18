@@ -20,6 +20,7 @@ public class DoctorPatient extends AppCompatActivity {
         doctor = (TextView)findViewById(R.id.doc);
         patient = (TextView) findViewById(R.id.patien);
 
+        //on click listeners
        doctor.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {

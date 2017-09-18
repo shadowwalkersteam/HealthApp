@@ -29,6 +29,7 @@ public class DatasourceID extends AppCompatActivity {
         Submit = (Button) findViewById(R.id.confirm);
         Datainputlayoutid = (TextInputLayout) findViewById(R.id.data_input_layout_id);
         sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        //if id is already saved then skip the DatasourceID activity
         if(sharedPreferences.contains("DataID"))
             startActivity(new Intent(DatasourceID.this,Dashboard2.class));
 
@@ -46,6 +47,7 @@ public class DatasourceID extends AppCompatActivity {
         }
         Datainputlayoutid.setErrorEnabled(false);
         String dsource = uniqueID.getText().toString();
+        //putting datasource id in shared preferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("DataID",dsource);
         editor.commit();
@@ -54,6 +56,7 @@ public class DatasourceID extends AppCompatActivity {
         startActivity(it);
     }
 
+    //check for id if it is valid or not
     private boolean checkID() {
         String ID = uniqueID.getText().toString().trim();
         if (ID.isEmpty() || !isIDValid(ID)) {

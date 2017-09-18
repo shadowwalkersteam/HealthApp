@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         get = (LinearLayout)findViewById(R.id.get);
         signin = (TextView)findViewById(R.id.signin);
 
+        //on button click listeners
         get.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

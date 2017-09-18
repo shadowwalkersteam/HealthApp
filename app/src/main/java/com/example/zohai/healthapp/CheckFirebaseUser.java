@@ -20,6 +20,7 @@ public class CheckFirebaseUser extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        //if user is already signin skip the sign in activity
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         authListener = new FirebaseAuth.AuthStateListener(){
             @Override

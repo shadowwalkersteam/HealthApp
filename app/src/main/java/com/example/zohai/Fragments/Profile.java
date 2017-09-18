@@ -36,6 +36,7 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
 //    private String userId;
     private ProgressDialog progressDialog;
 
+    //initializing firebase instances
     private DatabaseReference mFirebaseDatabase;
     private FirebaseDatabase mFirebaseInstance;
     private String firebaseUser;
@@ -101,6 +102,7 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
         progressDialog.setMessage("Getting your profile ready");
         progressDialog.show();
 
+        //if user node is available get the data
         mFirebaseDatabase.child(firebaseUser).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -184,6 +186,7 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
         }
     }
 
+    //create user node and save values in that user node
     private void createUser(String fullName, String dateOfBirth, String emailID, String phoneNumber) {
         if (TextUtils.isEmpty(firebaseUser)) {
 
@@ -198,6 +201,7 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
         addUserChangeListener();
     }
 
+    //if data is changed then update the fields
     private void addUserChangeListener() {
         mFirebaseDatabase.child(firebaseUser).addValueEventListener(new ValueEventListener() {
             @Override
@@ -222,6 +226,7 @@ public class Profile extends Fragment implements ConnectivityReceiver.Connectivi
         });
     }
 
+    //update the existing user data
     private void updateUser(String fullName, String dateOfBirth, String emailID, String phoneNumber){
 
         if (!TextUtils.isEmpty(fullName))

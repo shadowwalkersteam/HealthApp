@@ -44,6 +44,7 @@ public class ForgotPassword extends AppCompatActivity {
                 progressDialog.setMessage("Please wait...");
                 progressDialog.show();
 
+                //firebase authentication will send password reset email
                 auth.sendPasswordResetEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {

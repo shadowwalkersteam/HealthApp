@@ -19,6 +19,7 @@ public class Myapplication extends Application {
         return mInstance;
     }
 
+    //check for internet connection
     public void setConnectivityListener(ConnectivityReceiver.ConnectivityReceiverListener listener) {
         ConnectivityReceiver.connectivityReceiverListener = listener;
     }

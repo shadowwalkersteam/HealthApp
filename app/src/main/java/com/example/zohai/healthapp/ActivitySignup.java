@@ -79,7 +79,7 @@ public class ActivitySignup extends AppCompatActivity {
         progressDialog.setMessage("Registering Please Wait...");
         progressDialog.show();
 
-        //createuser
+        //createuser with firebase
         auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(ActivitySignup.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -101,6 +101,7 @@ public class ActivitySignup extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "You are successfully Registered !!", Toast.LENGTH_SHORT).show();
     }
 
+    //check for email
     private boolean checkEmail() {
         String email = InputEmail.getText().toString().trim();
         if (email.isEmpty() || !isEmailValid(email)) {
@@ -115,6 +116,7 @@ public class ActivitySignup extends AppCompatActivity {
         return true;
     }
 
+    //check for password
     private boolean checkPassword(){
         String password = InputPassword.getText().toString().trim();
         if (password.isEmpty() || !isPasswordValid(password)) {

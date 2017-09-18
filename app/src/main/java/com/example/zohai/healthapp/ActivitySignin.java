@@ -88,6 +88,7 @@ public class ActivitySignin extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
+        //firebase authentication
         auth.signInWithEmailAndPassword(email,password).addOnCompleteListener(ActivitySignin.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -110,6 +111,7 @@ public class ActivitySignin extends AppCompatActivity {
             }
         });
     }
+    //check for email entered
     private boolean checkEmail() {
         String email = InputEmail.getText().toString().trim();
         if (email.isEmpty() || !isEmailValid(email)) {
@@ -123,6 +125,7 @@ public class ActivitySignin extends AppCompatActivity {
         return true;
     }
 
+    //check for password entered
     private boolean checkPassword(){
         String password = InputPassword.getText().toString().trim();
         if (password.isEmpty() || !isPasswordValid(password)) {
@@ -144,6 +147,7 @@ public class ActivitySignin extends AppCompatActivity {
         return (password.length() >= 6);
     }
 
+    //focus on the layout where the error is
     private void requestFocus(View view) {
         if (view.requestFocus()) {
             getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);

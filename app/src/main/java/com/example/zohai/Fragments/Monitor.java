@@ -34,9 +34,9 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     public TextView blood_pressure;
     public TextView temperature;
 
-    public int heartdata;
-    public int bloodata;
-    public int tempdata;
+    public int heartdata;       //holds incoming heart rate value
+    public int bloodata;        //holds incoming blood pressure value
+    public int tempdata;        //holds incoming temperature value
 
     public int maxHeart = 120;
     public int minHeart = 50;
@@ -60,8 +60,9 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     private Timer timer = new Timer();
     private TimerTask doAsynchronousTask;
 
-    private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";
+    private String API_KEY = "9XWFrsh83kQWtNvBB6oU1F6zufzS8B";          //token
 
+    //variables unique labels
     private String heartVarId = "heartrate";
     private String bloodVarId = "bloodpressure";
     private String tempVarId = "temperature";
@@ -83,10 +84,12 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         Datasource = sharedPreferences.getString("DataID", null);
 
+        //get saved emergency contacts
         SharedPreferences sp = getActivity().getSharedPreferences("myContact",Context.MODE_PRIVATE);
         shared_mobile1 = sp.getString("phone1",null);
         shared_mobile2 = sp.getString("phone2",null);
 
+        //get saved custom values
         shared2 = getActivity().getSharedPreferences("HealthValues",Context.MODE_PRIVATE);
         Heart1 = Integer.parseInt(shared2.getString("maxheart", String.valueOf(0)));
         Heart2 = Integer.parseInt(shared2.getString("minheart", String.valueOf(0)));
@@ -98,6 +101,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         checkConnection();
     }
 
+    //check if wifi is connected
     private void checkConnection() {
         boolean isConnected = ConnectivityReceiver.isConnected();
         showToast(isConnected);
@@ -119,6 +123,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         blood_pressure = (TextView) view.findViewById(R.id.blood);
         temperature = (TextView) view.findViewById(R.id.temp);
 
+        //calling functions to get temp,pulse rate and blood pressure
         callAsynchronousTaskTemp();
         callAsynchronousTaskHeart();
         callAsynchronousTaskBlood();
@@ -135,6 +140,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
     @Override
     public void onDestroy() {
         super.onDestroy();
+        //timer will cancel
         timer.cancel();
     }
 
@@ -144,6 +150,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         Myapplication.getInstance().setConnectivityListener(this);
         checkMobile();
     }
+    //check if mobile numbers are entered or not
     private void checkMobile()
     {
         if(shared_mobile1 == null && shared_mobile2 == null)
@@ -156,6 +163,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         }
     }
 
+    //check for saved values
     private void checkValues()
     {
         if (Heart1 != 0 && Heart2 != 0 && Blood1 != 0 && Blood2 != 0 && Temp1 != 0 && Temp2 != 0)
@@ -167,28 +175,34 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
             minBlood = Blood2;
             minTemp = Temp2;
 
+            //call the function
             SMSThread();
         }
         else
         {
+            //call the function
             SMSThread();
         }
     }
 
+    //compare the incoming values with saved values
     private void SMSThread() {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 if(heartdata > maxHeart || heartdata < minHeart )
                 {
+                    //call function if condition true
                     sendSMSMessage();
                 }
                 else if (bloodata > maxBlood || bloodata < minBlood)
                 {
+                    //call function if condition true
                     sendSMSMessage();
                 }
                 else if(tempdata > maxTemp || tempdata < minTemp)
                 {
+                    //call function if condition true
                     sendSMSMessage();
                 }
                 else {
@@ -198,6 +212,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         },300 * 1000);
     }
 
+    //function to get temperature
     private void callAsynchronousTaskTemp() {
         final Handler handler = new Handler();
         doAsynchronousTask = new TimerTask() {
@@ -223,6 +238,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         timer.schedule(doAsynchronousTask, 0, 5000);
 
     }
+    //function to get blood pressure
     private void callAsynchronousTaskBlood() {
         final Handler handler = new Handler();
         doAsynchronousTask = new TimerTask() {
@@ -248,6 +264,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         timer.schedule(doAsynchronousTask, 0, 5000);
     }
 
+    //function to get heart rate
     public void callAsynchronousTaskHeart() {
         final Handler handler = new Handler();
         doAsynchronousTask = new TimerTask() {
@@ -278,6 +295,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         showToast(isConnected);
     }
 
+    //function to check for sms permission
     protected void sendSMSMessage() {
         if (ContextCompat.checkSelfPermission(getContext(),
                 Manifest.permission.SEND_SMS)
@@ -301,6 +319,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         }
     }
 
+    //verify the permission if it got
     private void verifyingPermission()
     {
         if (ContextCompat.checkSelfPermission(getContext(),
@@ -310,9 +329,11 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
 
         }
         else {
+            //call function
             sendSMS();
         }
     }
+    //grant permission
     @Override
     public void onRequestPermissionsResult(int requestCode,String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -325,6 +346,7 @@ public class Monitor extends Fragment implements ConnectivityReceiver.Connectivi
         }
 
     }
+    //function to send sms
     private void sendSMS()
     {
         SmsManager sms = SmsManager.getDefault();
